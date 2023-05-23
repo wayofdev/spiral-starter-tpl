@@ -15,3 +15,5 @@ protoc-gen-php-grpc*
 .phpunit.cache/
 
 /.build
+
+coverage.xml
