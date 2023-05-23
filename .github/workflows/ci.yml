@@ -49,8 +49,8 @@ jobs:
 
       - name: 🛠️ Prepare environment
         run: |
-          cd ../ && make env && cd app
-          cp ../.env .env
+          make env
+          make key
           mkdir -p ./.build/php-cs-fixer
           mkdir -p ./.build/phpstan
           mkdir -p ./.build/phpunit
