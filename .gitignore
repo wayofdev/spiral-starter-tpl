@@ -13,3 +13,5 @@ protoc-gen-php-grpc*
 .phpunit.result.cache
 .deptrac.cache
 .phpunit.cache/
+
+/.build
