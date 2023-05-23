@@ -1,6 +1,12 @@
-.idea
-vendor
-runtime
+/.fleet
+/.idea
+/.vscode
+
+/certs/*
+
+/vendor
+/runtime
+
 rr*
 protoc-gen-php-grpc*
 .env

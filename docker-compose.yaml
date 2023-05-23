@@ -1,0 +1,70 @@
+---
+
+version: '3.9'
+
+services:
+  app:
+    image: wayofdev/php-dev:8.2-cli-alpine-latest
+    container_name: ${COMPOSE_PROJECT_NAME}-app
+    restart: on-failure
+    networks:
+      - default
+      - shared
+    depends_on:
+      - database
+    links:
+      - database
+    external_links:
+      - "rabbitmq.${PROJECT_SERVICES_NAMESPACE}.alias:rabbitmq"
+    volumes:
+      - ./.:/app:rw,cached
+      - ./.env:/app/.env
+      - ~/.composer:/.composer
+      # SSH agent forwarding on unix sockets won't work
+      # https://medium.com/@vanuan/ssh-and-docker-compose-7bce10b67765
+      # Reverting to mounting the ssh folder
+      - ~/.ssh:/home/www-data/.ssh
+    environment:
+      FAKETIME: "+2h"
+    env_file:
+      - .env
+    dns:
+      8.8.8.8
+    command: /app/rr serve -d -o http.pool.num_workers=1 -o http.pool.debug=true -o jobs.pool.num_workers=1
+    tty: true
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}.rule=Host(`api.${COMPOSE_PROJECT_NAME}.docker`)
+      - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}.entrypoints=websecure
+      - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}.tls=true
+      - traefik.http.services.api-${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=8080
+      - traefik.http.services.api-${COMPOSE_PROJECT_NAME}.loadbalancer.server.scheme=http
+
+  database:
+    image: wayofdev/postgres:15-alpine-latest
+    container_name: ${COMPOSE_PROJECT_NAME}-database
+    restart: on-failure
+    networks:
+      - default
+      - shared
+    ports:
+      - '${DB_FORWARD_PORT:-5433}:5432'
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    volumes:
+      - database-data:/var/lib/postgresql/data:cached
+
+volumes:
+  database-data:
+    name: ${COMPOSE_PROJECT_NAME}-database-data
+
+networks:
+  shared:
+    external: true
+    name: network.${SHARED_SERVICES_NAMESPACE}
+  default:
+    name: project.${COMPOSE_PROJECT_NAME}
+
+...
