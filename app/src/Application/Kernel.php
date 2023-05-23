@@ -84,7 +84,7 @@ class Kernel extends \Spiral\Framework\Kernel
         EventBootloader::class,
 
         // Scheduler
-        SchedulerBootloader::class,
+        // SchedulerBootloader::class,
 
         // Sentry and Data collectors
         SentryReporterBootloader::class,
