@@ -9,18 +9,18 @@ use Spiral\RoadRunner\Jobs\Queue\MemoryCreateInfo;
 use Spiral\RoadRunner\Jobs\Queue\SQSCreateInfo;
 use Spiral\RoadRunnerBridge\Queue\Queue;
 
-/**
+/*
  * Queue configuration
  *
  * @link https://spiral.dev/docs/queue-configuration and https://spiral.dev/docs/queue-roadrunner
  */
 return [
-    /**
+    /*
      *  Default queue connection name
      */
     'default' => env('QUEUE_CONNECTION', 'roadrunner'),
 
-    /**
+    /*
      *  Aliases for queue connections, if you want to use domain specific queues
      */
     'aliases' => [
@@ -28,7 +28,7 @@ return [
         // 'rating-queue' => 'sync',
     ],
 
-    /**
+    /*
      * Queue connections
      * Drivers: "sync", "roadrunner"
      *
@@ -45,7 +45,7 @@ return [
         ],
     ],
 
-    /**
+    /*
      * You can create dynamic pipelines for RoadRunner.
      *
      * @link https://spiral.dev/docs/queue-roadrunner#declaring-pipelines-in-configuration-file
@@ -76,7 +76,7 @@ return [
         // ],
     ],
 
-    /**
+    /*
      * A serializer uses for converting job's payload from specified type to string and vice versa.
      *
      * @link https://spiral.dev/docs/queue-jobs/#job-payload-serialization
@@ -84,7 +84,7 @@ return [
     'defaultSerializer' => 'json',
 
     'registry' => [
-        /**
+        /*
          * Mapping of job names to job handlers for consumer. When a consumer receives a job, it will look for a
          * handler in this mapping.
          *
@@ -96,7 +96,7 @@ return [
             // 'ping' => \App\Endpoint\Job\Ping::class
         ],
 
-        /**
+        /*
          * Mapping of job names to serializers. When a job is pushed to the queue, it will be serialized using the
          * serializer specified in this mapping and then deserialized using the same serializer when the job is
          * handled.
@@ -109,7 +109,7 @@ return [
         ],
     ],
 
-    /**
+    /*
      * Spiral provides a way for developers to customize the behavior of their job processing pipeline through the use
      * of interceptors. An interceptor is a piece of code that is executed before or after a job is pushed or consumed,
      * and which allows developers to hook into the job processing pipeline to perform some action.

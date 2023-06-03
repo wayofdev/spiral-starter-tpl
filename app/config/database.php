@@ -12,12 +12,12 @@ return [
         ],
     ],
 
-    /**
+    /*
      * Default database connection
      */
     'default' => 'default',
 
-    /**
+    /*
      * The cycle/database package provides support to manage multiple databases
      * in one application, use read/write connections and logically separate
      * multiple databases within one connection using prefixes.
@@ -31,7 +31,7 @@ return [
         ],
     ],
 
-    /**
+    /*
      * Each database instance must have an associated connection object.
      * Connections used to provide low-level functionality and wrap different
      * database drivers. To register a new connection you have to specify

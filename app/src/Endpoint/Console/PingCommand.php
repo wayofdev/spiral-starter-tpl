@@ -7,11 +7,11 @@ namespace App\Endpoint\Console;
 use App\Endpoint\Job\Ping;
 use Spiral\Console\Attribute\Argument;
 use Spiral\Console\Attribute\AsCommand;
-use Spiral\Console\Attribute\Option;
 use Spiral\Console\Attribute\Question;
 use Spiral\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
 use Spiral\Queue\QueueInterface;
+
+use function sprintf;
 
 /**
  * Simple command to demonstrate how to push a job to a queue.
@@ -37,7 +37,7 @@ final class PingCommand extends Command
         ]);
 
         $this->info(
-            \sprintf('Job [%s] has been successfully pushed to a queue.', $id),
+            sprintf('Job [%s] has been successfully pushed to a queue.', $id),
         );
 
         return self::SUCCESS;
