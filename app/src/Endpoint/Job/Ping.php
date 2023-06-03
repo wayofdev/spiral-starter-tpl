@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Endpoint\Job;
 
 use App\Endpoint\Console\PingCommand;
-use Spiral\Queue\JobHandler;
 use Psr\Log\LoggerInterface;
+use Spiral\Queue\JobHandler;
 
 /**
  * Simple job handler that will be invoked by a queue consumer.

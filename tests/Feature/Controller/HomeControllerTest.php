@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Controller;
 
-use Tests\TestCase;
 use Spiral\Testing\Http\FakeHttp;
+use Tests\TestCase;
 
 class HomeControllerTest extends TestCase
 {
@@ -18,7 +18,10 @@ class HomeControllerTest extends TestCase
         $this->http = $this->fakeHttp();
     }
 
-    public function testDefaultActionWorks(): void
+    /**
+     * @test
+     */
+    public function default_action_works(): void
     {
         $this->http
             ->get('/')
@@ -26,7 +29,10 @@ class HomeControllerTest extends TestCase
             ->assertBodyContains('Spiral Framework is a high-performance, intuitive platform for building scalable');
     }
 
-    public function testInteractWithConsole(): void
+    /**
+     * @test
+     */
+    public function interact_with_console(): void
     {
         $output = $this->runCommand('views:reset');
 

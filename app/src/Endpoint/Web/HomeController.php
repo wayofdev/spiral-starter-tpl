@@ -15,11 +15,11 @@ use Spiral\Router\Annotation\Route;
 final class HomeController
 {
     /**
-     * Read more about Prototyping:
-     * @link https://spiral.dev/docs/basics-prototype/#installation
+     * Read more about Prototyping:.
+     *
+     * @see https://spiral.dev/docs/basics-prototype/#installation
      */
     use PrototypeTrait;
-
 
     #[Route(route: '/', name: 'index')]
     public function index(): string

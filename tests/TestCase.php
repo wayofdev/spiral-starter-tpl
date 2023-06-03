@@ -17,7 +17,7 @@ class TestCase extends BaseTestCase
     protected function setUp(): void
     {
         $this->beforeBooting(static function (ConfiguratorInterface $config): void {
-            if (!$config->exists('session')) {
+            if (! $config->exists('session')) {
                 return;
             }
 
@@ -33,6 +33,12 @@ class TestCase extends BaseTestCase
         }
     }
 
+    protected function tearDown(): void
+    {
+        // Uncomment this line if you want to clean up runtime directory.
+        // $this->cleanUpRuntimeDirectory();
+    }
+
     public function createAppInstance(Container $container = new Container()): TestableKernelInterface
     {
         return TestKernel::create(
@@ -41,12 +47,6 @@ class TestCase extends BaseTestCase
             ),
             container: $container,
         );
-    }
-
-    protected function tearDown(): void
-    {
-        // Uncomment this line if you want to clean up runtime directory.
-        // $this->cleanUpRuntimeDirectory();
     }
 
     public function rootDirectory(): string

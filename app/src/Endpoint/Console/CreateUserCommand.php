@@ -10,6 +10,8 @@ use Spiral\Console\Attribute\AsCommand;
 use Spiral\Console\Attribute\Question;
 use Spiral\Console\Command;
 
+use function sprintf;
+
 /**
  * Simple command that demonstrates how to use Cycle ORM.
  *
@@ -31,7 +33,7 @@ class CreateUserCommand extends Command
         $createdUser = $service->create($this->username, $this->email);
 
         $this->info(
-            \sprintf(
+            sprintf(
                 'The user "%s" with ID "%d" has been successfully created!',
                 $createdUser->getUsername(),
                 $createdUser->getId(),

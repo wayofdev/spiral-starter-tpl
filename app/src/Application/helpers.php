@@ -7,7 +7,7 @@ use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
 use Symfony\Component\VarDumper\VarDumper;
 
-if (!\function_exists('dumprr')) {
+if (! function_exists('dumprr')) {
     /**
      * This function is designed to dump a value within your application while using RoadRunner server.
      * RoadRunner does not allow data to be sent through STDIN, the output must be sent to STDERR instead.
@@ -17,8 +17,8 @@ if (!\function_exists('dumprr')) {
         $previous = $_SERVER['VAR_DUMPER_FORMAT'] ?? false;
         unset($_SERVER['VAR_DUMPER_FORMAT']);
 
-        if (!\defined('STDERR')) {
-            \define('STDERR', \fopen('php://stderr', 'wb'));
+        if (! defined('STDERR')) {
+            define('STDERR', fopen('php://stderr', 'wb'));
         }
         static $dumper = new CliDumper(STDERR);
 
@@ -27,7 +27,7 @@ if (!\function_exists('dumprr')) {
         //
         $cloner = new VarCloner();
         // remove File and Line definitions from a custom closure dump
-        /** @psalm-suppress InvalidArgument */
+        /* @psalm-suppress InvalidArgument */
         $cloner->addCasters(ReflectionCaster::UNSET_CLOSURE_FILE_INFO);
 
         // Set new handler and store previous one
