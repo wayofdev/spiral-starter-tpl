@@ -1,0 +1,13 @@
+.git
+.github
+.dockerignore
+.editorconfig
+.gitattributes
+.gitignore
+.pre-commit-config.yaml
+.templatesyncignore
+docker-compose.override.yaml.dist
+docker-compose.yaml
+Makefile
+CHANGELOG.md
+README.md
