@@ -7,7 +7,6 @@ services:
     restart: on-failure
     networks:
       - default
-      - shared
     ports:
       - '${TEMPORAL_DB_FORWARD_PORT:-5446}:5432'
     environment:
@@ -16,6 +15,12 @@ services:
       POSTGRES_DB: ${TEMPORAL_DB_DATABASE}
     volumes:
       - temporal-database-data:/var/lib/postgresql/data:cached
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-U', '${TEMPORAL_DB_USERNAME:-temporal}', '-d', '${TEMPORAL_DB_DATABASE:-temporal}']
+      interval: 3s
+      timeout: 1s
+      start_period: 0s
+      retries: 9
 
   temporal:
     image: temporalio/auto-setup:1.24.2
@@ -23,9 +28,9 @@ services:
     restart: on-failure
     networks:
       - default
-      - shared
     depends_on:
-      - temporal-database
+      temporal-database:
+        condition: service_healthy
     ports:
       - '${TEMPORAL_FORWARD_PORT:-7233}:7233'
     environment:
@@ -37,6 +42,12 @@ services:
       - DYNAMIC_CONFIG_FILE_PATH=config/dynamicconfig/development-sql.yaml
     volumes:
       - ./docker/temporal:/etc/temporal/config/dynamicconfig
+    healthcheck:
+      test: ['CMD-SHELL', 'tctl', '--address', '${TEMPORAL_ADDRESS:-temporal:7233}', 'workflow list']
+      interval: 1s
+      timeout: 5s
+      start_period: 2s
+      retries: 9
 
   temporal-ui:
     image: temporalio/ui:2.29.2
@@ -46,7 +57,8 @@ services:
       - default
       - shared
     depends_on:
-      - temporal
+      temporal:
+        condition: service_healthy
     environment:
       - TEMPORAL_ADDRESS=temporal:7233
       - TEMPORAL_CORS_ORIGINS=https://temporal.${COMPOSE_PROJECT_NAME}.docker
