@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fbad1cd1d9aad0019368c01d0407947f",
+    "content-hash": "184eb2f1106c9b3d33517827beb4b2ac",
     "packages": [
         {
             "name": "alexkart/curl-builder",
@@ -6722,31 +6722,31 @@
         },
         {
             "name": "spiral/temporal-bridge",
-            "version": "2.2.0",
+            "version": "3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/temporal-bridge.git",
-                "reference": "b37149a2af1c67abfcfd138d66b1c3b4ba297ebf"
+                "reference": "6251b2e58c7b3ca4985b33b08b95908bb0b8b716"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/temporal-bridge/zipball/b37149a2af1c67abfcfd138d66b1c3b4ba297ebf",
-                "reference": "b37149a2af1c67abfcfd138d66b1c3b4ba297ebf",
+                "url": "https://api.github.com/repos/spiral/temporal-bridge/zipball/6251b2e58c7b3ca4985b33b08b95908bb0b8b716",
+                "reference": "6251b2e58c7b3ca4985b33b08b95908bb0b8b716",
                 "shasum": ""
             },
             "require": {
-                "nette/php-generator": "^4.0",
                 "php": "^8.1",
                 "spiral/attributes": "^2.8 || ^3.0",
-                "spiral/boot": "^3.0",
-                "spiral/roadrunner-bridge": "^2.0 || ^3.0",
-                "spiral/tokenizer": "^3.0",
-                "temporal/sdk": "^1.3 || ^2.0"
+                "spiral/boot": "^3.13",
+                "spiral/roadrunner-bridge": "^2.0 || ^3.5",
+                "spiral/scaffolder": "^3.13",
+                "spiral/tokenizer": "^3.13",
+                "temporal/sdk": "^2.7"
             },
             "require-dev": {
-                "spiral/framework": "^3.0",
-                "spiral/testing": "^2.0",
-                "vimeo/psalm": "^4.9"
+                "spiral/framework": "^3.13",
+                "spiral/testing": "^2.7",
+                "vimeo/psalm": "^5.23"
             },
             "type": "library",
             "extra": {
@@ -6767,13 +6767,24 @@
             ],
             "authors": [
                 {
-                    "name": "butschster",
-                    "email": "butschster@gmail.com",
-                    "role": "Developer"
+                    "name": "Anton Titov (wolfy-j)",
+                    "email": "wolfy-j@spiralscout.com"
+                },
+                {
+                    "name": "Pavel Butchnev (butschster)",
+                    "email": "pavel.buchnev@spiralscout.com"
+                },
+                {
+                    "name": "Aleksei Gagarin (roxblnfk)",
+                    "email": "alexey.gagarin@spiralscout.com"
+                },
+                {
+                    "name": "Maksim Smakouz (msmakouz)",
+                    "email": "maksim.smakouz@spiralscout.com"
                 }
             ],
             "description": "Temporal integration package for Spiral Framework",
-            "homepage": "https://github.com/spiral/temporal-bridge",
+            "homepage": "https://spiral.dev",
             "keywords": [
                 "php",
                 "spiral",
@@ -6782,10 +6793,19 @@
                 "workflow"
             ],
             "support": {
+                "chat": "https://discord.gg/V6EK4he",
+                "docs": "https://spiral.dev/docs",
+                "forum": "https://forum.spiral.dev",
                 "issues": "https://github.com/spiral/temporal-bridge/issues",
-                "source": "https://github.com/spiral/temporal-bridge/tree/2.2.0"
+                "source": "https://github.com/spiral/temporal-bridge"
             },
-            "time": "2023-04-13T15:04:47+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/roadrunner-server",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-05-23T06:12:28+00:00"
         },
         {
             "name": "symfony/console",

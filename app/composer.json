@@ -26,7 +26,7 @@
         "spiral/data-grid-bridge": "^3.0.1",
         "spiral-packages/league-event": "^1.0.1",
         "spiral-packages/scheduler": "^2.1",
-        "spiral/temporal-bridge": "^2.2",
+        "spiral/temporal-bridge": "^3.0",
         "spiral/sentry-bridge": "^2.1"
     },
     "require-dev": {
