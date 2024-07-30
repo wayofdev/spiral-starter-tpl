@@ -1,39 +1,72 @@
 ---
 
 services:
-  postgresql:
-    container_name: temporal-postgresql
-    image: postgres:13
-    environment:
-      POSTGRES_PASSWORD: temporal
-      POSTGRES_USER: temporal
-    ports:
-      - 5432:5432
-
-  temporal:
-    container_name: temporal
-    image: temporalio/auto-setup:1.14.2
+  app:
+    image: wayofdev/php-dev:8.3-cli-alpine-latest
+    container_name: ${COMPOSE_PROJECT_NAME}-app
+    restart: on-failure
+    networks:
+      - default
+      - shared
     depends_on:
-      - postgresql
-    environment:
-      - DB=postgresql
-      - DB_PORT=5432
-      - POSTGRES_USER=temporal
-      - POSTGRES_PWD=temporal
-      - POSTGRES_SEEDS=postgresql
-      - DYNAMIC_CONFIG_FILE_PATH=config/dynamicconfig/development.yaml
-    ports:
-      - 7233:7233
+      - database
+    links:
+      - database
     volumes:
-      - ./docker/temporal:/etc/temporal/config/dynamicconfig
-
-  temporal-web:
-    container_name: temporal-web
-    image: temporalio/web:1.13.0
-    depends_on:
-      - temporal
+      - ./.github/assets:/assets:rw,cached
+      - ./app:/app:rw,cached
+      - ./.env:/app/.env
+      - ~/.composer:/.composer
+      # SSH agent forwarding on unix sockets won't work
+      # https://medium.com/@vanuan/ssh-and-docker-compose-7bce10b67765
+      # Reverting to mounting the ssh folder
+      - ~/.ssh:/home/www-data/.ssh
     environment:
-      - TEMPORAL_GRPC_ENDPOINT=temporal:7233
-      - TEMPORAL_PERMIT_WRITE_API=true
+      FAKETIME: '+2h'
+      XDEBUG_MODE: '${XDEBUG_MODE:-off}'
+      PHIVE_HOME: /app/.phive
+    env_file:
+      - .env
+    dns:
+      8.8.8.8
+    command: /app/rr serve -o http.pool.num_workers=1 -o http.pool.debug=true -o jobs.pool.num_workers=1
+    tty: true
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}.rule=Host(`api.${COMPOSE_PROJECT_NAME}.docker`)
+      - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}.entrypoints=websecure
+      - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}.tls=true
+      - traefik.http.services.api-${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=8080
+      - traefik.http.services.api-${COMPOSE_PROJECT_NAME}.loadbalancer.server.scheme=http
+
+  database:
+    image: postgres:16.3-alpine
+    container_name: ${COMPOSE_PROJECT_NAME}-database
+    restart: on-failure
+    networks:
+      - default
+      - shared
     ports:
-      - 8088:8088
+      - '${DB_FORWARD_PORT:-5444}:5432'
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    volumes:
+      - database-data:/var/lib/postgresql/data:cached
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-U', '${DB_USERNAME:-spiral}', '-d', '${DB_DATABASE:-spiral}']
+      interval: 3s
+      timeout: 1s
+      retries: 10
+
+volumes:
+  database-data:
+    name: ${COMPOSE_PROJECT_NAME}-database-data
+
+networks:
+  shared:
+    external: true
+    name: network.${SHARED_SERVICES_NAMESPACE}
+  default:
+    name: project.${COMPOSE_PROJECT_NAME}
