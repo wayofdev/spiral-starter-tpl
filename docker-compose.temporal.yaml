@@ -52,11 +52,11 @@ services:
       - TEMPORAL_CORS_ORIGINS=https://temporal.${COMPOSE_PROJECT_NAME}.docker
     labels:
       - traefik.enable=true
-      - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}.rule=Host(`temporal.${COMPOSE_PROJECT_NAME}.docker`)
-      - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}.entrypoints=websecure
-      - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}.tls=true
-      - traefik.http.services.api-${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=8080
-      - traefik.http.services.api-${COMPOSE_PROJECT_NAME}.loadbalancer.server.scheme=http
+      - traefik.http.routers.temporal-ui-${COMPOSE_PROJECT_NAME}.rule=Host(`temporal.${COMPOSE_PROJECT_NAME}.docker`)
+      - traefik.http.routers.temporal-ui-${COMPOSE_PROJECT_NAME}.entrypoints=websecure
+      - traefik.http.routers.temporal-ui-${COMPOSE_PROJECT_NAME}.tls=true
+      - traefik.http.services.temporal-ui-${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=8080
+      - traefik.http.services.temporal-ui-${COMPOSE_PROJECT_NAME}.loadbalancer.server.scheme=http
 
 volumes:
   temporal-database-data:

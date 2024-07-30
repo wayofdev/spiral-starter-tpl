@@ -13,7 +13,7 @@ DOCKER_COMPOSE_APP_FILE := docker-compose.yaml
 DOCKER_COMPOSE_TEMPORAL_FILE := docker-compose.temporal.yaml
 
 # Binary to use, when executing docker-compose tasks
-DOCKER_COMPOSE ?= $(DOCKER) compose -f $(DOCKER_COMPOSE_APP_FILE) -f $(DOCKER_COMPOSE_TEMPORAL_FILE)
+DOCKER_COMPOSE ?= $(DOCKER) compose -f $(DOCKER_COMPOSE_TEMPORAL_FILE) -f $(DOCKER_COMPOSE_APP_FILE)
 
 # Support image with all needed binaries, like envsubst, mkcert, wait4x
 SUPPORT_IMAGE ?= wayofdev/build-deps:alpine-latest
@@ -152,6 +152,7 @@ up: # Creates and starts containers, defined in docker-compose and override file
 	$(DOCKER_COMPOSE) up --remove-orphans -d
 	@sleep 1
 	$(DOCKER_COMPOSE) exec app wait4x postgresql 'postgres://${DB_USERNAME}:${DB_PASSWORD}@database:5432/${DB_DATABASE}?sslmode=disable' -t 1m
+	$(DOCKER_COMPOSE) exec app wait4x tcp '${TEMPORAL_ADDRESS}' -t 1m
 .PHONY: up
 
 down: # Stops and removes containers of this project
