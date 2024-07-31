@@ -38,7 +38,12 @@
         "ext-mbstring": "*",
         "ext-pdo": "*",
         "ext-sockets": "*",
+        "cycle/annotated": "^4.1",
+        "cycle/database": "^2.11",
+        "cycle/orm": "^2.8",
         "illuminate/collections": "^9.52",
+        "monolog/monolog": "^3.7",
+        "ramsey/uuid": "^4.7",
         "spiral-packages/laravel-validator": "^1.1",
         "spiral-packages/league-event": "^1.0",
         "spiral-packages/scheduler": "^2.1",
@@ -53,7 +58,9 @@
         "spiral/sapi-bridge": "^1.0",
         "spiral/sentry-bridge": "^2.2",
         "spiral/temporal-bridge": "^3.1",
-        "spiral/views": "^3.8"
+        "spiral/views": "^3.8",
+        "symfony/console": "^7.1",
+        "temporal/sdk": "^2.10"
     },
     "require-dev": {
         "ergebnis/phpunit-slow-test-detector": "^2.15",
