@@ -17,11 +17,11 @@ class User
      * @psalm-suppress PropertyNotSetInConstructor
      */
     #[Column(type: 'primary')]
-    private int $id;
+    private readonly int $id;
 
     public function __construct(
-        #[Column(type: 'string')] private string $username,
-        #[Column(type: 'string')] private string $email,
+        #[Column(type: 'string')] private readonly string $username,
+        #[Column(type: 'string')] private readonly string $email,
     ) {
     }
 

@@ -11,6 +11,7 @@ use Spiral\Testing\TestableKernelInterface;
 use Spiral\Testing\TestCase as BaseTestCase;
 use Spiral\Translator\TranslatorInterface;
 use Tests\App\TestKernel;
+use Throwable;
 
 class TestCase extends BaseTestCase
 {
@@ -39,6 +40,9 @@ class TestCase extends BaseTestCase
         // $this->cleanUpRuntimeDirectory();
     }
 
+    /**
+     * @throws Throwable
+     */
     public function createAppInstance(Container $container = new Container()): TestableKernelInterface
     {
         return TestKernel::create(
