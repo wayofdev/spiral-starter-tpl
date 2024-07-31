@@ -13,15 +13,15 @@ use Cycle\Annotated\Annotation\Entity;
 )]
 class User
 {
-    /** @psalm-suppress PropertyNotSetInConstructor */
+    /**
+     * @psalm-suppress PropertyNotSetInConstructor
+     */
     #[Column(type: 'primary')]
     private int $id;
 
     public function __construct(
-        #[Column(type: 'string')]
-        private string $username,
-        #[Column(type: 'string')]
-        private string $email,
+        #[Column(type: 'string')] private string $username,
+        #[Column(type: 'string')] private string $email,
     ) {
     }
 

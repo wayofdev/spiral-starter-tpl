@@ -1,11 +1,11 @@
-<?php $translator = $this->container->has(\Spiral\Translator\TranslatorInterface::class)
-    ? $this->container->get(\Spiral\Translator\TranslatorInterface::class)
+<?php $translator = $this->container->has(Spiral\Translator\TranslatorInterface::class)
+    ? $this->container->get(Spiral\Translator\TranslatorInterface::class)
     : null;
 ?>
 <!DOCTYPE html>
-<html lang="<?=$translator?->getLocale() ?? 'en'?>>">
+<html lang="<?php echo $translator?->getLocale() ?? 'en'; ?>>">
 <head>
-    <title><?=$translator?->trans('The PHP Framework for future Innovators') ?? 'The PHP Framework for future Innovators'?></title>
+    <title><?php echo $translator?->trans('The PHP Framework for future Innovators') ?? 'The PHP Framework for future Innovators'; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -282,7 +282,7 @@
                 </a>
             </nav>
         </div>
-        <div class="version"><span>Spiral Framework v3.8</span> <span>PHP <?=PHP_VERSION?></span></div>
+        <div class="version"><span>Spiral Framework v3.8</span> <span>PHP <?php echo PHP_VERSION; ?></span></div>
 
         <div class="logo">
             <a href="https://spiral.dev/">
