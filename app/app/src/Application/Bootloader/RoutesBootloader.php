@@ -21,7 +21,7 @@ use Spiral\Session\Middleware\SessionMiddleware;
 /**
  * A bootloader that configures the application's routes and middleware.
  *
- * @link https://spiral.dev/docs/http-routing
+ * @see https://spiral.dev/docs/http-routing
  */
 final class RoutesBootloader extends BaseRoutesBootloader
 {
@@ -44,7 +44,7 @@ final class RoutesBootloader extends BaseRoutesBootloader
                 CookiesMiddleware::class,
                 SessionMiddleware::class,
                 CsrfMiddleware::class,
-                ValidationHandlerMiddleware::class
+                ValidationHandlerMiddleware::class,
             ],
         ];
     }

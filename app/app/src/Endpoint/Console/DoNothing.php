@@ -11,6 +11,8 @@ use Spiral\Console\Attribute\Question;
 use Spiral\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 
+use function sprintf;
+
 /**
  * Simple command that does nothing, but demonstrates how to use arguments and options.
  *
@@ -37,7 +39,7 @@ final class DoNothing extends Command
 
     public function __invoke(): int
     {
-        $this->info(\sprintf(
+        $this->info(sprintf(
             'The task "%s" has been successfully completed "%d" times!',
             $this->name,
             $this->times

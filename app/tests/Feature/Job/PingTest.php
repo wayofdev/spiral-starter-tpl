@@ -19,7 +19,10 @@ class PingTest extends TestCase
         $this->connection = $this->fakeQueue()->getConnection();
     }
 
-    public function testJobPushed(): void
+    /**
+     * @test
+     */
+    public function job_pushed(): void
     {
         $this->connection->push(Ping::class, ['value' => 'hello world']);
 

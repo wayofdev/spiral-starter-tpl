@@ -1,0 +1,6 @@
+{
+    "symbol-whitelist": [
+        "Spiral\\Debug\\Bootloader\\DumperBootloader",
+        "Spiral\\Debug\\Middleware\\DumperMiddleware"
+    ]
+}
