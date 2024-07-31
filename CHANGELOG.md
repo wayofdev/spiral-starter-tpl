@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.1](https://github.com/wayofdev/spiral-starter-tpl/compare/v2.0.0...v2.0.1) (2024-07-31)
+
+
+### Continuous Integration
+
+* add coding standards workflow ([9985e3f](https://github.com/wayofdev/spiral-starter-tpl/commit/9985e3f52171ac3cfb6301fa401b8ad4389354a6))
+* add missing requirements ([0f6e2a9](https://github.com/wayofdev/spiral-starter-tpl/commit/0f6e2a958d4e340479ca012bd272b005f22cae48))
+* add php-cs-fixer and composer-require-checker configs ([465d687](https://github.com/wayofdev/spiral-starter-tpl/commit/465d6879a8309f46d6d4c39bae45d8647d5fe679))
+* fixes for coding standards ([13ccd51](https://github.com/wayofdev/spiral-starter-tpl/commit/13ccd518b82aac470888ebb5e8fadbc7122b9bc7))
+
 ## [2.0.0](https://github.com/wayofdev/spiral-starter-tpl/compare/v1.0.0...v2.0.0) (2024-07-30)
 
 
