@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Endpoint\Job;
 
 use App\Endpoint\Console\PingCommand;
-use Psr\Log\LoggerInterface;
+use Spiral\Logger\LogsInterface;
 use Spiral\Queue\JobHandler;
 
 /**
@@ -17,8 +17,8 @@ use Spiral\Queue\JobHandler;
  */
 final class Ping extends JobHandler
 {
-    public function invoke(LoggerInterface $logger, string $site): void
+    public function invoke(LogsInterface $logger, string $site): void
     {
-        $logger->info('Ping job invoked', ['site' => $site]);
+        $logger->getLogger()->info('Ping job invoked', ['site' => $site]);
     }
 }

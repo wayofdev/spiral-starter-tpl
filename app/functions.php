@@ -6,7 +6,7 @@ use Spiral\Debug\Exception\DumpException;
 use Spiral\Debug\HtmlDumper;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 
-if (!\function_exists('dd')) {
+if (! function_exists('dd')) {
     function dd(mixed ...$vars): mixed
     {
         $dumper = new HtmlDumper();

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application\Bootloader;
 
-use Monolog\Logger;
+use Monolog\Level;
 use Spiral\Boot\Bootloader\Bootloader;
 use Spiral\Config\ConfiguratorInterface;
 use Spiral\Http\Middleware\ErrorHandlerMiddleware;
@@ -14,7 +14,7 @@ use Spiral\Monolog\Config\MonologConfig;
 /**
  * The bootloader is responsible for configuring the application specific loggers.
  *
- * @link https://spiral.dev/docs/basics-logging
+ * @see https://spiral.dev/docs/basics-logging
  */
 final class LoggingBootloader extends Bootloader
 {
@@ -38,7 +38,7 @@ final class LoggingBootloader extends Bootloader
             channel: MonologConfig::DEFAULT_CHANNEL,
             handler: $monolog->logRotate(
                 filename: directory('runtime') . 'logs/error.log',
-                level: Logger::ERROR,
+                level: Level::Error,
                 maxFiles: 25,
                 bubble: false,
             ),

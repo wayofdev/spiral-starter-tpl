@@ -9,6 +9,6 @@ return [
     'address' => env('TEMPORAL_ADDRESS', 'temporal:7233'),
     'defaultWorker' => WorkerFactoryInterface::DEFAULT_TASK_QUEUE,
     'workers' => [
-        'workerName' => WorkerOptions::new()
+        'workerName' => WorkerOptions::new(),
     ],
 ];

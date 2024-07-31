@@ -34,7 +34,7 @@ class UuidTypecast implements CastableInterface, UncastableInterface
     public function cast(array $data): array
     {
         foreach ($this->rules as $column => $rule) {
-            if (!isset($data[$column])) {
+            if (! isset($data[$column])) {
                 continue;
             }
 
@@ -47,7 +47,7 @@ class UuidTypecast implements CastableInterface, UncastableInterface
     public function uncast(array $data): array
     {
         foreach ($this->rules as $column => $rule) {
-            if (!isset($data[$column]) || !$data[$column] instanceof UuidInterface) {
+            if (! isset($data[$column]) || ! $data[$column] instanceof UuidInterface) {
                 continue;
             }
 

@@ -5,8 +5,11 @@ declare(strict_types=1);
 namespace Tests\Feature\Controller;
 
 use Spiral\Bootloader\I18nBootloader;
-use Tests\TestCase;
 use Spiral\Testing\Http\FakeHttp;
+use Tests\TestCase;
+
+use function in_array;
+use function strip_tags;
 
 class HomeControllerTest extends TestCase
 {
@@ -19,19 +22,25 @@ class HomeControllerTest extends TestCase
         $this->http = $this->fakeHttp();
     }
 
-    public function testDefaultActionWorks(): void
+    /**
+     * @test
+     */
+    public function default_action_works(): void
     {
         $response = $this->http->get('/')->assertOk();
 
         $this->assertStringContainsString(
             'The PHP Framework for future Innovators',
-            \strip_tags((string) $response->getOriginalResponse()->getBody())
+            strip_tags((string) $response->getOriginalResponse()->getBody())
         );
     }
 
-    public function testDefaultActionWithRuLocale(): void
+    /**
+     * @test
+     */
+    public function default_action_with_ru_locale(): void
     {
-        if (!\in_array(I18nBootloader::class, $this->getRegisteredBootloaders())) {
+        if (! in_array(I18nBootloader::class, $this->getRegisteredBootloaders())) {
             $this->markTestSkipped('Component `spiral/translator` is not installed.');
         }
 
@@ -39,11 +48,14 @@ class HomeControllerTest extends TestCase
 
         $this->assertStringContainsString(
             'PHP Framework для будущих инноваторов',
-            \strip_tags((string) $response->getOriginalResponse()->getBody())
+            strip_tags((string) $response->getOriginalResponse()->getBody())
         );
     }
 
-    public function testInteractWithConsole(): void
+    /**
+     * @test
+     */
+    public function interact_with_console(): void
     {
         $output = $this->runCommand('views:reset');
 

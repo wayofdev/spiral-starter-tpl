@@ -11,7 +11,7 @@ use Spiral\DataGrid\Interceptor\GridInterceptor;
 use Spiral\Domain\GuardInterceptor;
 
 /**
- * @link https://spiral.dev/docs/http-interceptors
+ * @see https://spiral.dev/docs/http-interceptors
  */
 final class AppBootloader extends DomainBootloader
 {

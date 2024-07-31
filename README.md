@@ -113,7 +113,7 @@ You should observe your current-date route within the displayed list:
 +--------------+--------+----------+------------------------------------------------+--------+
 ```
 
-#### What's Next?
+### What's Next?
 
 Now, dive deeper into the fundamentals by reading some articles:
 
@@ -189,7 +189,7 @@ composer rr:download
 
 If you chose to install the default application skeleton, your project will have the following directory structure:
 
-```
+```text
 - Endpoint
     - Web
         - UserController.php
@@ -242,7 +242,7 @@ If you chose to install the default application skeleton, your project will have
         - ExceptionHandlerInterceptor.php
 ```
 
-#### Here's a brief explanation of the directories and files in this structure
+### Here's a brief explanation of the directories and files in this structure
 
 - **Endpoint**: This directory contains the entry points for your application, including HTTP endpoints (in the Web
   subdirectory), command-line interfaces (in the Console subdirectory), and gRPC services (in the RPC subdirectory).
