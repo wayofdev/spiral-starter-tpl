@@ -5,17 +5,6 @@ on:  # yamllint disable-line rule:truthy
     branches:
       - master
       - develop
-    paths:
-      - 'app/config/**'
-      - 'app/src/**'
-      - 'app/tests/**'
-      - 'app/.php-cs-fixer.dist.php'
-      - 'app/composer.json'
-      - 'app/composer.lock'
-      - 'app/phpstan.neon.dist'
-      - 'app/phpstan-baseline.neon'
-      - 'app/psalm.xml'
-      - 'app/psalm-baseline.xml'
 
 name: 🔍 Static analysis
 
