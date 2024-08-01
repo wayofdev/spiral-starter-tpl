@@ -28,8 +28,6 @@ services:
       FAKETIME: '+2h'
       XDEBUG_MODE: '${XDEBUG_MODE:-off}'
       PHIVE_HOME: /app/.phive
-    env_file:
-      - .env
     dns:
       8.8.8.8
     command: /app/rr serve

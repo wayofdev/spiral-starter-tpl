@@ -8,12 +8,15 @@ use WayOfDev\PhpCsFixer\Config\RuleSets\DefaultSet;
 require_once 'vendor/autoload.php';
 
 $config = ConfigBuilder::createFromRuleSet(new DefaultSet(['static_lambda' => false]))
-    ->inDir(__DIR__ . '/app')
+    ->inDir(__DIR__ . '/config')
+    ->inDir(__DIR__ . '/migrations')
+    ->inDir(__DIR__ . '/src')
     ->inDir(__DIR__ . '/tests')
     ->addFiles([
         __FILE__,
         __DIR__ . '/functions.php',
         __DIR__ . '/app.php',
+        __DIR__ . '/rector.php',
     ])
     ->useParallelConfig()
     ->getConfig()
