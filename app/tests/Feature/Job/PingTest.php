@@ -5,13 +5,18 @@ declare(strict_types=1);
 namespace Tests\Feature\Job;
 
 use App\Endpoint\Job\Ping;
+use PHPUnit\Framework\Attributes\Test;
+use Spiral\Queue\Exception\InvalidArgumentException;
 use Spiral\Testing\Queue\FakeQueue;
 use Tests\TestCase;
 
-class PingTest extends TestCase
+final class PingTest extends TestCase
 {
     private FakeQueue $connection;
 
+    /**
+     * @throws InvalidArgumentException
+     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -19,9 +24,7 @@ class PingTest extends TestCase
         $this->connection = $this->fakeQueue()->getConnection();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function job_pushed(): void
     {
         $this->connection->push(Ping::class, ['value' => 'hello world']);
