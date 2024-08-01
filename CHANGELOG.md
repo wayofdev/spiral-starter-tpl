@@ -1,5 +1,38 @@
 # Changelog
 
+## [2.0.2](https://github.com/wayofdev/spiral-starter-tpl/compare/v2.0.1...v2.0.2) (2024-08-01)
+
+
+### Bug Fixes
+
+* add memory sqlite driver to speed up testing ([f6d44f2](https://github.com/wayofdev/spiral-starter-tpl/commit/f6d44f2c0be66d1e43da4f196b06455343dc4fc8))
+* env loading and caching issues ([5a866d0](https://github.com/wayofdev/spiral-starter-tpl/commit/5a866d0a2f8fa62c7c650c2b50148d918d6e1b59))
+
+
+### Code Refactoring
+
+* flattern application structure ([bc20e70](https://github.com/wayofdev/spiral-starter-tpl/commit/bc20e700c2a4602fde36b096abf3d13a1967036c))
+
+
+### Tests
+
+* add basic arch pest tests ([a52c2cf](https://github.com/wayofdev/spiral-starter-tpl/commit/a52c2cf7b06ddd9ab72f14137f4efe202e809bf2))
+* remove locale testing ([feb2c8b](https://github.com/wayofdev/spiral-starter-tpl/commit/feb2c8b505ad40c243d2da2ca5ffd454b586b91b))
+
+
+### Continuous Integration
+
+* add infection config ([b7ce21c](https://github.com/wayofdev/spiral-starter-tpl/commit/b7ce21cbd4caa6fb8f1586bef45128147295e266))
+* add pest and phpunit xml configs ([57348af](https://github.com/wayofdev/spiral-starter-tpl/commit/57348aff19b2cf6cc8452dcefbcdeb594c5d0bd8))
+* add psalm support ([d462830](https://github.com/wayofdev/spiral-starter-tpl/commit/d462830188e7939bead98b734482b5a97df0dcd6))
+* add rector config ([2000f9b](https://github.com/wayofdev/spiral-starter-tpl/commit/2000f9b20962083197c231571d79efc2d94b8ce3))
+* add rector workflow ([5cf4e60](https://github.com/wayofdev/spiral-starter-tpl/commit/5cf4e60d20cbea1c623f54f60370b8b13a94bfdb))
+* apply rector rules ([59e2da6](https://github.com/wayofdev/spiral-starter-tpl/commit/59e2da692393fc4c749cc1950c6dc8cb6ab17d03))
+* dependency, testing and analysis workflows ([b4144e0](https://github.com/wayofdev/spiral-starter-tpl/commit/b4144e02786c112e741efe49e3fbd86687542b82))
+* fix static analysis ([054c360](https://github.com/wayofdev/spiral-starter-tpl/commit/054c360a4e13db3dbe0f642f4b832f21062fd926))
+* migrate rector to use fluent config approach ([f117b42](https://github.com/wayofdev/spiral-starter-tpl/commit/f117b428d3d35366fb3c867bd4e67c4c45f17467))
+* workflow updates ([9d0956b](https://github.com/wayofdev/spiral-starter-tpl/commit/9d0956bbfb928a1d67c8c3519beaee0531858771))
+
 ## [2.0.1](https://github.com/wayofdev/spiral-starter-tpl/compare/v2.0.0...v2.0.1) (2024-07-31)
 
 
