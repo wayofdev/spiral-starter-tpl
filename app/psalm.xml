@@ -16,7 +16,7 @@
     </plugins>
 
     <projectFiles>
-        <directory name="app/src"/>
+        <directory name="src"/>
         <directory name="tests/"/>
         <ignoreFiles>
             <directory name="tests/src/Arch/"/>

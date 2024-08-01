@@ -44,7 +44,7 @@ return [
         'file' => [
             // Alias for FileStorage type
             'type' => 'file',
-            'path' => directory('runtime') . 'cache',
+            'path' => directory('runtime') . 'Cache',
         ],
     ],
 
