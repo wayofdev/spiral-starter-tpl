@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="5.25.0@01a8eb06b9e9cc6cfb6a320bf9fb14331919d505">
+  <file src="src/Application/Bootloader/AppBootloader.php">
+    <InvalidClassConstantType>
+      <code><![CDATA[INTERCEPTORS]]></code>
+    </InvalidClassConstantType>
+  </file>
+  <file src="src/Application/Bootloader/ExceptionHandlerBootloader.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+      <code><![CDATA[boot]]></code>
+      <code><![CDATA[init]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Application/Bootloader/LoggingBootloader.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+      <code><![CDATA[init]]></code>
+    </PossiblyUnusedMethod>
+    <UnusedProperty>
+      <code><![CDATA[$config]]></code>
+    </UnusedProperty>
+  </file>
+  <file src="src/Domain/User/Entity/User.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getEmail]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Domain/User/Repository/UserRepositoryInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getById]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Domain/User/Service/CreateUserService.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Endpoint/Console/CreateUserCommand.php">
+    <UnusedClass>
+      <code><![CDATA[CreateUserCommand]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Endpoint/Console/DoNothing.php">
+    <UnusedClass>
+      <code><![CDATA[DoNothing]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Endpoint/Console/PingCommand.php">
+    <UnusedClass>
+      <code><![CDATA[PingCommand]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Endpoint/Job/Ping.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[invoke]]></code>
+    </PossiblyUnusedMethod>
+    <TooFewArguments>
+      <code><![CDATA[getLogger]]></code>
+      <code><![CDATA[getLogger]]></code>
+    </TooFewArguments>
+  </file>
+  <file src="src/Endpoint/Web/HomeController.php">
+    <MixedInferredReturnType>
+      <code><![CDATA[string]]></code>
+    </MixedInferredReturnType>
+    <MixedMethodCall>
+      <code><![CDATA[render]]></code>
+    </MixedMethodCall>
+    <MixedReturnStatement>
+      <code><![CDATA[$this->views->render('home')]]></code>
+    </MixedReturnStatement>
+    <UnusedClass>
+      <code><![CDATA[HomeController]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php">
+    <MixedArgument>
+      <code><![CDATA[$data[$column]]]></code>
+    </MixedArgument>
+    <MixedAssignment>
+      <code><![CDATA[$rule]]></code>
+      <code><![CDATA[$rule]]></code>
+      <code><![CDATA[$rule]]></code>
+    </MixedAssignment>
+    <UnusedClass>
+      <code><![CDATA[UuidTypecast]]></code>
+    </UnusedClass>
+    <UnusedForeachValue>
+      <code><![CDATA[$rule]]></code>
+      <code><![CDATA[$rule]]></code>
+    </UnusedForeachValue>
+  </file>
+  <file src="src/Temporal/PaymentActivity.php">
+    <TooFewArguments>
+      <code><![CDATA[getLogger]]></code>
+      <code><![CDATA[getLogger]]></code>
+    </TooFewArguments>
+    <UnusedClass>
+      <code><![CDATA[PaymentActivity]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Temporal/PaymentWorkflow.php">
+    <UnusedClass>
+      <code><![CDATA[PaymentWorkflow]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Temporal/PaymentWorkflowInterface.php">
+    <MissingReturnType>
+      <code><![CDATA[start]]></code>
+    </MissingReturnType>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[start]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="tests/Feature/Controller/HomeControllerTest.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[default_action_works]]></code>
+      <code><![CDATA[interact_with_console]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="tests/Feature/Job/PingTest.php">
+    <MixedArrayAccess>
+      <code><![CDATA[$data['payload']['value']]]></code>
+    </MixedArrayAccess>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[job_pushed]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="tests/TestCase.php">
+    <UndefinedInterfaceMethod>
+      <code><![CDATA[setLocale]]></code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="tests/Unit/DemoTest.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[demo]]></code>
+    </PossiblyUnusedMethod>
+    <RedundantCondition>
+      <code><![CDATA[assertFalse]]></code>
+      <code><![CDATA[assertTrue]]></code>
+    </RedundantCondition>
+  </file>
+</files>

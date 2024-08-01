@@ -4,19 +4,18 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
-class DemoTest extends TestCase
+final class DemoTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function demo(): void
     {
         $expected = true;
         $actual = false;
 
-        $this->assertTrue($expected);
-        $this->assertFalse($actual);
+        self::assertTrue($expected);
+        self::assertFalse($actual);
     }
 }

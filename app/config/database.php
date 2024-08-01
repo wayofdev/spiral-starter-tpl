@@ -50,6 +50,11 @@ return [
      * the driver class and its connection options.
      */
     'drivers' => [
+        'memory' => new Config\SQLiteDriverConfig(
+            connection: new Config\SQLite\MemoryConnectionConfig(),
+            queryCache: true
+        ),
+
         'sqlite' => new Config\SQLiteDriverConfig(
             connection: new Config\SQLite\MemoryConnectionConfig(),
             queryCache: env('DB_QUERY_CACHE', true),

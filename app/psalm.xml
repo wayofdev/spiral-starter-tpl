@@ -1,15 +1,29 @@
 <?xml version="1.0"?>
 <psalm
-    errorLevel="2"
-    resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    cacheDirectory=".build/psalm/"
+    errorBaseline="psalm-baseline.xml"
+    errorLevel="1"
+    findUnusedBaselineEntry="true"
+    findUnusedCode="true"
+    findUnusedVariablesAndParams="true"
+    strictBinaryOperands="true"
 >
+    <plugins>
+        <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
+    </plugins>
+
     <projectFiles>
-        <directory name="app/src"/>
+        <directory name="src"/>
+        <directory name="tests/"/>
         <ignoreFiles>
+            <directory name="tests/src/Arch/"/>
             <directory name="vendor"/>
         </ignoreFiles>
+        <file name=".php-cs-fixer.dist.php"/>
+        <file name="app.php"/>
+        <file name="functions.php"/>
     </projectFiles>
 </psalm>

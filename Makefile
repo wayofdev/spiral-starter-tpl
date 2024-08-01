@@ -175,6 +175,10 @@ purge: ## Stops and removes containers, volumes, networks and images
 restart: down up ## Runs down and up commands
 .PHONY: restart
 
+restart-app: ## Restarts app container
+	$(DOCKER_COMPOSE) restart app
+.PHONY: restart-app
+
 clean: ## Stops and removes containers of this project together with volumes
 	$(DOCKER_COMPOSE) rm --force --stop --volumes
 .PHONY: clean

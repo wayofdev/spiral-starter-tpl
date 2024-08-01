@@ -28,7 +28,7 @@ final class PingCommand extends Command
 {
     #[Argument(description: 'Site url')]
     #[Question(question: 'Provide a site url')]
-    private string $site;
+    private readonly string $site;
 
     public function __invoke(QueueInterface $queue): int
     {

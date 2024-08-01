@@ -24,7 +24,7 @@ jobs:
       pull-requests: read
     steps:
       - name: 📦 Check out the codebase
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
 
       - name: 🧐 Lint commits using "commitlint"
         uses: wagoid/commitlint-github-action@v6.0.1
@@ -45,7 +45,7 @@ jobs:
       pull-requests: read
     steps:
       - name: 📦 Check out the codebase
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
 
       - name: 🧐 Lint YAML files
         uses: ibiqlik/action-yamllint@v3.1.1
@@ -62,7 +62,7 @@ jobs:
       group: markdown-linting-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
     steps:
       - name: 📦 Check out the codebase
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
 
       - name: 🧐 Lint Markdown files
         uses: DavidAnson/markdownlint-cli2-action@v16.0.0
@@ -92,7 +92,7 @@ jobs:
       contents: write
     steps:
       - name: 🛠️ Setup PHP
-        uses: shivammathur/setup-php@2.30.5
+        uses: shivammathur/setup-php@2.31.1
         with:
           php-version: ${{ matrix.php-version }}
           extensions: none, ctype, dom, json, mbstring, simplexml, tokenizer, xml, xmlwriter, pdo, curl, fileinfo, pdo_mysql, sockets
@@ -101,7 +101,7 @@ jobs:
           tools: phive
 
       - name: 📦 Check out the codebase
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
 
       - name: 🛠️ Setup problem matchers
         run: |
@@ -162,7 +162,7 @@ jobs:
           git config --global core.eol lf
 
       - name: 🛠️ Setup PHP
-        uses: shivammathur/setup-php@2.30.5
+        uses: shivammathur/setup-php@2.31.1
         with:
           php-version: ${{ matrix.php-version }}
           extensions: none, ctype, dom, json, mbstring, simplexml, tokenizer, xml, xmlwriter, pdo, curl, fileinfo, pdo_mysql, decimal
@@ -170,7 +170,7 @@ jobs:
           coverage: none
 
       - name: 📦 Check out the codebase
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
 
       - name: 🛠️ Setup problem matchers
         run: |

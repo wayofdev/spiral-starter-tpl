@@ -28,7 +28,7 @@ final class DoNothing extends Command
 {
     #[Argument(description: 'Task name')]
     #[Question(question: 'Provide task name')]
-    private string $name;
+    private readonly string $name;
 
     #[Option(
         shortcut: 't',

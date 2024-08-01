@@ -11,6 +11,7 @@ use Spiral\Testing\TestableKernelInterface;
 use Spiral\Testing\TestCase as BaseTestCase;
 use Spiral\Translator\TranslatorInterface;
 use Tests\App\TestKernel;
+use Throwable;
 
 class TestCase extends BaseTestCase
 {
@@ -35,10 +36,15 @@ class TestCase extends BaseTestCase
 
     protected function tearDown(): void
     {
+        parent::tearDown();
+
         // Uncomment this line if you want to clean up runtime directory.
         // $this->cleanUpRuntimeDirectory();
     }
 
+    /**
+     * @throws Throwable
+     */
     public function createAppInstance(Container $container = new Container()): TestableKernelInterface
     {
         return TestKernel::create(
@@ -58,6 +64,11 @@ class TestCase extends BaseTestCase
     {
         return [
             'root' => $root,
+            'app' => $root . '/src',
+            'config' => $root . '/config',
+            'public' => $root . '/public',
+            'runtime' => $root . '/runtime',
+            'views' => $root . '/views',
         ];
     }
 }

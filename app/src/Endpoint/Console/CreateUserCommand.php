@@ -22,11 +22,11 @@ class CreateUserCommand extends Command
 {
     #[Argument(description: 'User name')]
     #[Question(question: 'Provide username')]
-    private string $username;
+    private readonly string $username;
 
     #[Argument(description: 'User E-mail')]
     #[Question(question: 'Provide e-mail address')]
-    private string $email;
+    private readonly string $email;
 
     public function __invoke(CreateUserService $service): int
     {
