@@ -1,0 +1,133 @@
+---
+
+on:  # yamllint disable-line rule:truthy
+  pull_request:
+    branches:
+      - master
+      - develop
+    paths:
+      - 'app/config/**'
+      - 'app/src/**'
+      - 'app/tests/**'
+      - 'app/.php-cs-fixer.dist.php'
+      - 'app/composer.json'
+      - 'app/composer.lock'
+      - 'app/phpstan.neon.dist'
+      - 'app/phpstan-baseline.neon'
+      - 'app/psalm.xml'
+      - 'app/psalm-baseline.xml'
+
+name: 🔍 Static analysis
+
+env:
+  # Disable docker support in Makefile
+  APP_RUNNER: 'cd app &&'
+
+jobs:
+  phpstan:
+    timeout-minutes: 4
+    runs-on: ${{ matrix.os }}
+    concurrency:
+      cancel-in-progress: true
+      group: phpstan-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os:
+          - ubuntu-latest
+        php-version:
+          - '8.3'
+        dependencies:
+          - locked
+    steps:
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@v4.1.7
+
+      - name: 🛠️ Setup PHP
+        uses: shivammathur/setup-php@2.31.1
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: none, ctype, dom, json, mbstring, simplexml, tokenizer, xml, xmlwriter, pdo, curl, fileinfo, pdo_mysql, opcache, pcntl, posix
+          ini-values: error_reporting=E_ALL
+          coverage: none
+
+      - name: 🛠️ Setup problem matchers
+        run: echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+
+      - name: 🤖 Validate composer.json and composer.lock
+        run: make validate-composer
+
+      - name: 🔍 Get composer cache directory
+        uses: wayofdev/gh-actions/actions/composer/get-cache-directory@v3.1.1
+        with:
+          working-directory: app
+
+      - name: ♻️ Restore cached dependencies installed with composer
+        uses: actions/cache@v4.0.2
+        with:
+          path: ${{ env.COMPOSER_CACHE_DIR }}
+          key: php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}
+          restore-keys: php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-
+
+      - name: 📥 Install "${{ matrix.dependencies }}" dependencies with composer
+        uses: wayofdev/gh-actions/actions/composer/install@v3.1.1
+        with:
+          working-directory: app
+          dependencies: ${{ matrix.dependencies }}
+
+      - name: 🔍 Run static analysis using phpstan/phpstan
+        run: make lint-stan-ci
+
+  psalm:
+    timeout-minutes: 4
+    runs-on: ${{ matrix.os }}
+    concurrency:
+      cancel-in-progress: true
+      group: psalm-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os:
+          - ubuntu-latest
+        php-version:
+          - '8.3'
+        dependencies:
+          - locked
+    steps:
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@v4.1.7
+
+      - name: 🛠️ Setup PHP
+        uses: shivammathur/setup-php@2.31.1
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: none, ctype, dom, json, mbstring, simplexml, tokenizer, xml, xmlwriter, pdo, pdo_mysql, curl, fileinfo, opcache, pcntl, posix
+          ini-values: error_reporting=E_ALL
+          coverage: xdebug
+
+      - name: 🛠️ Setup problem matchers
+        run: echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+
+      - name: 🤖 Validate composer.json and composer.lock
+        run: make validate-composer
+
+      - name: 🔍 Get composer cache directory
+        uses: wayofdev/gh-actions/actions/composer/get-cache-directory@v3.1.1
+        with:
+          working-directory: app
+
+      - name: ♻️ Restore cached dependencies installed with composer
+        uses: actions/cache@v4.0.2
+        with:
+          path: ${{ env.COMPOSER_CACHE_DIR }}
+          key: php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}
+          restore-keys: php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-
+
+      - name: 📥 Install "${{ matrix.dependencies }}" dependencies with composer
+        uses: wayofdev/gh-actions/actions/composer/install@v3.1.1
+        with:
+          working-directory: app
+          dependencies: ${{ matrix.dependencies }}
+
+      - name: 🔍 Run static analysis using vimeo/psalm
+        run: make lint-psalm-ci
