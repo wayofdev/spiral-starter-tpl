@@ -41,7 +41,7 @@
         "cycle/annotated": "^4.1",
         "cycle/database": "^2.11",
         "cycle/orm": "^2.8",
-        "illuminate/collections": "^9.52",
+        "illuminate/collections": "^11.0",
         "monolog/monolog": "^3.7",
         "ramsey/uuid": "^4.7",
         "spiral-packages/laravel-validator": "^1.1",
