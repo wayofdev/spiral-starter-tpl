@@ -36,6 +36,8 @@ class TestCase extends BaseTestCase
 
     protected function tearDown(): void
     {
+        parent::tearDown();
+
         // Uncomment this line if you want to clean up runtime directory.
         // $this->cleanUpRuntimeDirectory();
     }
@@ -62,6 +64,11 @@ class TestCase extends BaseTestCase
     {
         return [
             'root' => $root,
+            'app' => $root . '/src',
+            'config' => $root . '/config',
+            'public' => $root . '/public',
+            'runtime' => $root . '/runtime',
+            'views' => $root . '/views',
         ];
     }
 }

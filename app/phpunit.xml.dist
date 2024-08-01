@@ -33,7 +33,7 @@
     </logging>
     <source>
         <include>
-            <directory>app/src</directory>
+            <directory>src</directory>
         </include>
     </source>
     <php>
