@@ -81,6 +81,11 @@ parameters:
 			path: src/Endpoint/Job/Ping.php
 
 		-
+			message: "#^Access to an undefined property App\\\\Endpoint\\\\Web\\\\HomeController\\:\\:\\$views\\.$#"
+			count: 1
+			path: src/Endpoint/Web/HomeController.php
+
+		-
 			message: "#^Method App\\\\Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:cast\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
