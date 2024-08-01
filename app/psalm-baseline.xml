@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <files psalm-version="5.25.0@01a8eb06b9e9cc6cfb6a320bf9fb14331919d505">
-  <file src="functions.php">
-    <MixedAssignment>
-      <code><![CDATA[$var]]></code>
-    </MixedAssignment>
-    <PossiblyNullArgument>
-      <code><![CDATA[$dumper->dump((new VarCloner())->cloneVar($var), true)]]></code>
-    </PossiblyNullArgument>
-  </file>
   <file src="src/Application/Bootloader/AppBootloader.php">
     <InvalidClassConstantType>
       <code><![CDATA[INTERCEPTORS]]></code>
@@ -69,6 +61,15 @@
     </TooFewArguments>
   </file>
   <file src="src/Endpoint/Web/HomeController.php">
+    <MixedInferredReturnType>
+      <code><![CDATA[string]]></code>
+    </MixedInferredReturnType>
+    <MixedMethodCall>
+      <code><![CDATA[render]]></code>
+    </MixedMethodCall>
+    <MixedReturnStatement>
+      <code><![CDATA[$this->views->render('home')]]></code>
+    </MixedReturnStatement>
     <UnusedClass>
       <code><![CDATA[HomeController]]></code>
     </UnusedClass>

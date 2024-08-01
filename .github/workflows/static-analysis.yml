@@ -3,7 +3,6 @@
 on:  # yamllint disable-line rule:truthy
   pull_request:
     branches:
-      - master
       - develop
 
 name: 🔍 Static analysis
