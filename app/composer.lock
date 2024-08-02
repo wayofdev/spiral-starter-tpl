@@ -5884,16 +5884,16 @@
         },
         {
             "name": "spiral/roadrunner-bridge",
-            "version": "v3.6.1",
+            "version": "v3.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/roadrunner-bridge.git",
-                "reference": "c9db5fb6334270066bf0fd19d22b78e50cbc0615"
+                "reference": "f86982fc49af37e15981a4a9a1c615823916e9a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/roadrunner-bridge/zipball/c9db5fb6334270066bf0fd19d22b78e50cbc0615",
-                "reference": "c9db5fb6334270066bf0fd19d22b78e50cbc0615",
+                "url": "https://api.github.com/repos/spiral/roadrunner-bridge/zipball/f86982fc49af37e15981a4a9a1c615823916e9a9",
+                "reference": "f86982fc49af37e15981a4a9a1c615823916e9a9",
                 "shasum": ""
             },
             "require": {
@@ -5966,7 +5966,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-25T10:21:56+00:00"
+            "time": "2024-08-02T08:24:01+00:00"
         },
         {
             "name": "spiral/roadrunner-cli",
