@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Application\Exception\Handler;
-use App\Application\Kernel;
+use Bridge\Spiral\Exceptions\Handler;
+use Bridge\Spiral\Kernel;
 
 mb_internal_encoding('UTF-8');
 error_reporting((E_ALL | E_STRICT) ^ E_DEPRECATED);

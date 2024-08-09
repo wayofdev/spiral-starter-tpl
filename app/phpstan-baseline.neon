@@ -11,119 +11,134 @@ parameters:
 			path: config/database.php
 
 		-
-			message: "#^Method App\\\\Application\\\\Bootloader\\\\LoggingBootloader\\:\\:__construct\\(\\) has parameter \\$config with generic interface Spiral\\\\Config\\\\ConfiguratorInterface but does not specify its types\\: TClass$#"
+			message: "#^Method Spiral\\\\Logger\\\\LogsInterface\\:\\:getLogger\\(\\) invoked with 0 parameters, 1 required\\.$#"
 			count: 1
-			path: src/Application/Bootloader/LoggingBootloader.php
+			path: src/Application/Payment/Activities/PaymentActivity.php
 
 		-
-			message: "#^Property App\\\\Application\\\\Bootloader\\\\LoggingBootloader\\:\\:\\$config is never read, only written\\.$#"
+			message: "#^Method Bridge\\\\Spiral\\\\Bootloaders\\\\AppBootloader\\:\\:defineInterceptors\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
-			path: src/Application/Bootloader/LoggingBootloader.php
+			path: src/Bridge/Spiral/Bootloaders/AppBootloader.php
 
 		-
-			message: "#^Method App\\\\Application\\\\Bootloader\\\\RoutesBootloader\\:\\:middlewareGroups\\(\\) return type with generic class Spiral\\\\Core\\\\Container\\\\Autowire does not specify its types\\: TObject$#"
+			message: "#^Method Bridge\\\\Spiral\\\\Bootloaders\\\\LoggingBootloader\\:\\:__construct\\(\\) has parameter \\$config with generic interface Spiral\\\\Config\\\\ConfiguratorInterface but does not specify its types\\: TClass$#"
 			count: 1
-			path: src/Application/Bootloader/RoutesBootloader.php
+			path: src/Bridge/Spiral/Bootloaders/LoggingBootloader.php
 
 		-
-			message: "#^Class App\\\\Domain\\\\User\\\\Entity\\\\User has an uninitialized readonly property \\$id\\. Assign it in the constructor\\.$#"
+			message: "#^Property Bridge\\\\Spiral\\\\Bootloaders\\\\LoggingBootloader\\:\\:\\$config is never read, only written\\.$#"
 			count: 1
-			path: src/Domain/User/Entity/User.php
+			path: src/Bridge/Spiral/Bootloaders/LoggingBootloader.php
 
 		-
-			message: "#^Property App\\\\Domain\\\\User\\\\Entity\\\\User\\:\\:\\$id is never written, only read\\.$#"
+			message: "#^Method Bridge\\\\Spiral\\\\Bootloaders\\\\RoutesBootloader\\:\\:middlewareGroups\\(\\) return type with generic class Spiral\\\\Core\\\\Container\\\\Autowire does not specify its types\\: TObject$#"
 			count: 1
-			path: src/Domain/User/Entity/User.php
+			path: src/Bridge/Spiral/Bootloaders/RoutesBootloader.php
 
 		-
-			message: "#^Class App\\\\Endpoint\\\\Console\\\\CreateUserCommand has an uninitialized readonly property \\$email\\. Assign it in the constructor\\.$#"
+			message: "#^Class Bridge\\\\Spiral\\\\Console\\\\CreateUserCommand has an uninitialized readonly property \\$email\\. Assign it in the constructor\\.$#"
 			count: 1
-			path: src/Endpoint/Console/CreateUserCommand.php
+			path: src/Bridge/Spiral/Console/CreateUserCommand.php
 
 		-
-			message: "#^Class App\\\\Endpoint\\\\Console\\\\CreateUserCommand has an uninitialized readonly property \\$username\\. Assign it in the constructor\\.$#"
+			message: "#^Class Bridge\\\\Spiral\\\\Console\\\\CreateUserCommand has an uninitialized readonly property \\$username\\. Assign it in the constructor\\.$#"
 			count: 1
-			path: src/Endpoint/Console/CreateUserCommand.php
+			path: src/Bridge/Spiral/Console/CreateUserCommand.php
 
 		-
-			message: "#^Property App\\\\Endpoint\\\\Console\\\\CreateUserCommand\\:\\:\\$email is never written, only read\\.$#"
+			message: "#^Property Bridge\\\\Spiral\\\\Console\\\\CreateUserCommand\\:\\:\\$email is never written, only read\\.$#"
 			count: 1
-			path: src/Endpoint/Console/CreateUserCommand.php
+			path: src/Bridge/Spiral/Console/CreateUserCommand.php
 
 		-
-			message: "#^Property App\\\\Endpoint\\\\Console\\\\CreateUserCommand\\:\\:\\$username is never written, only read\\.$#"
+			message: "#^Property Bridge\\\\Spiral\\\\Console\\\\CreateUserCommand\\:\\:\\$username is never written, only read\\.$#"
 			count: 1
-			path: src/Endpoint/Console/CreateUserCommand.php
+			path: src/Bridge/Spiral/Console/CreateUserCommand.php
 
 		-
-			message: "#^Class App\\\\Endpoint\\\\Console\\\\DoNothing has an uninitialized readonly property \\$name\\. Assign it in the constructor\\.$#"
+			message: "#^Class Bridge\\\\Spiral\\\\Console\\\\DoNothing has an uninitialized readonly property \\$name\\. Assign it in the constructor\\.$#"
 			count: 1
-			path: src/Endpoint/Console/DoNothing.php
+			path: src/Bridge/Spiral/Console/DoNothing.php
 
 		-
-			message: "#^Property App\\\\Endpoint\\\\Console\\\\DoNothing\\:\\:\\$name is never written, only read\\.$#"
+			message: "#^Property Bridge\\\\Spiral\\\\Console\\\\DoNothing\\:\\:\\$name is never written, only read\\.$#"
 			count: 1
-			path: src/Endpoint/Console/DoNothing.php
+			path: src/Bridge/Spiral/Console/DoNothing.php
 
 		-
-			message: "#^Class App\\\\Endpoint\\\\Console\\\\PingCommand has an uninitialized readonly property \\$site\\. Assign it in the constructor\\.$#"
+			message: "#^Class Bridge\\\\Spiral\\\\Console\\\\PingCommand has an uninitialized readonly property \\$site\\. Assign it in the constructor\\.$#"
 			count: 1
-			path: src/Endpoint/Console/PingCommand.php
+			path: src/Bridge/Spiral/Console/PingCommand.php
 
 		-
-			message: "#^Property App\\\\Endpoint\\\\Console\\\\PingCommand\\:\\:\\$site is never written, only read\\.$#"
+			message: "#^Property Bridge\\\\Spiral\\\\Console\\\\PingCommand\\:\\:\\$site is never written, only read\\.$#"
 			count: 1
-			path: src/Endpoint/Console/PingCommand.php
+			path: src/Bridge/Spiral/Console/PingCommand.php
 
 		-
 			message: "#^Method Spiral\\\\Logger\\\\LogsInterface\\:\\:getLogger\\(\\) invoked with 0 parameters, 1 required\\.$#"
 			count: 1
-			path: src/Endpoint/Job/Ping.php
+			path: src/Bridge/Spiral/Public/Ping/Jobs/Ping.php
 
 		-
-			message: "#^Access to an undefined property App\\\\Endpoint\\\\Web\\\\HomeController\\:\\:\\$views\\.$#"
+			message: "#^Access to an undefined property Bridge\\\\Spiral\\\\Public\\\\Web\\\\HomeController\\:\\:\\$views\\.$#"
 			count: 1
-			path: src/Endpoint/Web/HomeController.php
+			path: src/Bridge/Spiral/Public/Web/HomeController.php
 
 		-
-			message: "#^Method App\\\\Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:cast\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: "#^Method Domain\\\\Payment\\\\PaymentWorkflowInterface\\:\\:start\\(\\) has no return type specified\\.$#"
 			count: 1
-			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
+			path: src/Domain/Payment/PaymentWorkflowInterface.php
 
 		-
-			message: "#^Method App\\\\Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:cast\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Class Domain\\\\User\\\\Entity\\\\User has an uninitialized readonly property \\$id\\. Assign it in the constructor\\.$#"
 			count: 1
-			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
+			path: src/Domain/User/Entity/User.php
 
 		-
-			message: "#^Method App\\\\Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:uncast\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: "#^Property Domain\\\\User\\\\Entity\\\\User\\:\\:\\$id is never written, only read\\.$#"
 			count: 1
-			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
+			path: src/Domain/User/Entity/User.php
 
 		-
-			message: "#^Method App\\\\Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:uncast\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
-
-		-
-			message: "#^Property App\\\\Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:\\$database is never read, only written\\.$#"
+			message: "#^Method Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:cast\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
 
 		-
-			message: "#^Property App\\\\Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:\\$rules type has no value type specified in iterable type array\\.$#"
+			message: "#^Method Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:cast\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
 
 		-
-			message: "#^Method Spiral\\\\Logger\\\\LogsInterface\\:\\:getLogger\\(\\) invoked with 0 parameters, 1 required\\.$#"
+			message: "#^Method Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:uncast\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: src/Temporal/PaymentActivity.php
+			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
 
 		-
-			message: "#^Method App\\\\Temporal\\\\PaymentWorkflowInterface\\:\\:start\\(\\) has no return type specified\\.$#"
+			message: "#^Method Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:uncast\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
-			path: src/Temporal/PaymentWorkflowInterface.php
+			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
+
+		-
+			message: "#^Property Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:\\$database is never read, only written\\.$#"
+			count: 1
+			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
+
+		-
+			message: "#^Property Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:\\$rules type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
+
+		-
+			message: "#^Class App\\\\Bridge\\\\Spiral\\\\Public\\\\Ping\\\\Jobs\\\\Ping not found\\.$#"
+			count: 3
+			path: tests/Feature/Job/PingTest.php
+
+		-
+			message: "#^Call to an undefined static method Tests\\\\App\\\\TestKernel\\:\\:create\\(\\)\\.$#"
+			count: 1
+			path: tests/TestCase.php
 
 		-
 			message: "#^Call to static method PHPUnit\\\\Framework\\\\Assert\\:\\:assertFalse\\(\\) with false will always evaluate to true\\.$#"

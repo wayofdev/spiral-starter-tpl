@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\User\Entity;
+namespace Domain\User\Entity;
 
-use App\Infrastructure\Persistence\CycleORMUserRepository;
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
+use Infrastructure\Persistence\CycleORMUserRepository;
 
 #[Entity(
     repository: CycleORMUserRepository::class,
