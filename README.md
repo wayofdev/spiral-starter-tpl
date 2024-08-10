@@ -1,281 +1,231 @@
-# My awesome Web application
+<p align="center">
+    <br>
+    <a href="https://wayof.dev" target="_blank">
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wayofdev/.github/master/assets/logo.gh-dark-mode-only.png">
+            <img width="400" src="https://raw.githubusercontent.com/wayofdev/.github/master/assets/logo.gh-light-mode-only.png" alt="WayOfDev Logo">
+        </picture>
+    </a>
+    <br>
+</p>
+
+<p align="center">
+    <strong>Build</strong><br>
+    <a href="https://actions-badge.atrox.dev/wayofdev/spiral-starter-tpl/goto" target="_blank"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwayofdev%2Fspiral-starter-tpl%2Fbadge&style=flat-square&label=github%20actions"/></a>
+    <a href="https://github.com/wayofdev/spiral-starter-tpl/actions/workflows/deploy-staging.yml?query=workflow%3ADeploy" target="_blank"><img alt="Deploy to Staging Status" src="https://img.shields.io/github/actions/workflow/status/wayofdev/spiral-starter-tpl/deploy-staging.yml?branch=develop&style=flat-square&label=deploy%20to%20staging&logo=github"/></a>
+    <a href="https://github.com/wayofdev/spiral-starter-tpl/actions/workflows/deploy-release.yml?query=workflow%3ADeploy" target="_blank"><img alt="Deploy to Production Status" src="https://img.shields.io/github/actions/workflow/status/wayofdev/spiral-starter-tpl/deploy-release.yml?style=flat-square&label=deploy%20to%20prod&logo=github"/></a>
+</p>
+<p align="center">
+    <strong>Project</strong><br>
+    <a href="https://github.com/wayofdev/spiral-starter-tpl" target="_blank"><img src="https://img.shields.io/github/v/release/wayofdev/spiral-starter-tpl?style=flat-square" alt="Latest Stable Version"></a>
+    <a href="https://github.com/wayofdev/spiral-starter-tpl" target="_blank"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/spiral-starter-tpl/latest?style=flat-square"></a>
+    <a href="https://github.com/wayofdev/spiral-starter-tpl" target="_blank"><img alt="PHP Version Require" src="https://poser.pugx.org/wayofdev/laravel-package-tpl/require/php?style=flat-square"></a>
+</p>
+<p align="center">
+    <strong>Quality</strong><br>
+    <a href="https://app.codecov.io/gh/wayofdev/spiral-starter-tpl" target="_blank"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/wayofdev/spiral-starter-tpl?style=flat-square&logo=codecov"></a>
+    <a href="https://dashboard.stryker-mutator.io/reports/github.com/wayofdev/spiral-starter-tpl/develop" target="_blank"><img alt="Mutation testing badge" src="https://img.shields.io/endpoint?style=flat-square&label=mutation%20score&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fwayofdev%2Fspiral-starter-tpl%2Fmaster"></a>
+    <a href=""><img src="https://img.shields.io/badge/phpstan%20level-8%20of%209-brightgreen?style=flat-square" alt="PHP Stan Level 8 of 9"></a>
+</p>
+<p align="center">
+    <strong>Community</strong><br>
+    <a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Discord" src="https://img.shields.io/discord/1228506758562058391?style=flat-square&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
+    <a href="https://x.com/intent/follow?screen_name=wayofdev" target="_blank"><img alt="Follow on Twitter (X)" src="https://img.shields.io/badge/-Follow-black?style=flat-square&logo=X"></a>
+</p>
+<br>
+
+# Spiral Framework Starter Template
+
+This is an **opinionated** modified version of the Spiral Framework which aims at providing a Domain-Driven Design (DDD) structure.
 
-Hello developer! Welcome to your new awesome `Web` application built with the Spiral framework.
+## 📄 About
+
+To be added...
+
+<br>
+
+🙏 If you find this repository useful, consider giving it a ⭐️. Thank you!
 
-We're excited that you've chosen Spiral for your project and we hope that our installer package has made the
-installation process a breeze.
+<br>
+
+## 🚀 Features
 
-To help you get started, we've provided some instructions for configuring the individual packages that were installed.
-Depending on the packages you chose during the installation, you'll find the following next steps:
+This starter template includes several added, changed, and removed features:
 
-## Configuration
+### → Framework Modifications
 
-### Environment variables
+* **Added:**
+  * To be added...
+* **Changed:**
+  * To be added...
+* **Removed:**
+  * To be added...
 
-- Please, configure the environment variables in the `.env` file at the application's root.
+### → Development Tools
 
-### RoadRunnerBridge
+* **Added:**
+  * Style checker package for custom rule-sets to php-cs-fixer — [wayofdev/php-cs-fixer-config](https://github.com/wayofdev/php-cs-fixer-config)
+  * [Phive](https://github.com/phar-io/phive) support for managing PHP tools
+    * [ergebnis/composer-normalize](https://github.com/ergebnis/composer-normalize) composer plugin for normalizing composer.json file
+    * [maglnet/ComposerRequireChecker](https://github.com/maglnet/ComposerRequireChecker) to check whether a specific composer package uses imported symbols that aren't part of its direct composer dependencies
+  * Application dockerization using docker-compose and Makefile — use `make help` to view available commands
+    * [docker-php-dev](https://github.com/wayofdev/docker-php-dev) as PHP development environment with XDebug support out of the box
 
-- The settings for RoadRunner are in a file `.rr.yaml` at the main folder of the app.
-- Documentation: <https://spiral.dev/docs/start-server>
+### → Testing
 
-### CycleBridge
+* **Added:**
+  * Configured [PHPUnit](https://phpunit.de/index.html) for unit testing.
+  * Integrated [Pest PHP](https://pestphp.com) for elegant console support and architecture testing.
+  * [Infection](https://github.com/infection/infection) for mutation testing to ensure quality.
+  * Mutation test reports are uploaded [Stryker Mutator Dashboard](https://dashboard.stryker-mutator.io).
 
-- Database configuration file: `app/config/database.php`
-- Migrations configuration file: `app/config/migration.php`
-- Cycle ORM configuration file: `app/config/cycle.php`
-- Documentation: `https://spiral.dev/docs/basics-orm`
+### → Static Analysis
 
-### LaravelValidator
+* **Added:**
+  * Static analysis tool — [PHPStan](https://phpstan.org) and it's extensions:
+    * [phpstan/extension-installer](https://github.com/phpstan/extension-installer) — automatic installation of PHPStan extensions
+    * [phpstan/phpstan-deprecation-rules](https://github.com/phpstan/phpstan-deprecation-rules) — rules for detecting usage of deprecated classes, methods, properties, constants and traits.
+    * [larastan/larastan](https://github.com/larastan/larastan) for Laravel-specific static analysis.
+  * [Psalm](https://github.com/vimeo/psalm) static analysis tool and it's extensions:
+    * [psalm/plugin-laravel](https://github.com/psalm/psalm-plugin-laravel) — Psalm plugin for Laravel
+    * [psalm/plugin-phpunit](https://github.com/psalm/psalm-plugin-phpunit) — Psalm plugin for PHPUnit
+  * [PHP Rector](https://github.com/rectorphp/rector) for automated code upgrades and refactoring, maintaining modern code standards.
 
-- Read more about validation in the Spiral Framework: <https://spiral.dev/docs/validation-factory>
-- Documentation: <https://spiral.dev/docs/validation-laravel>
+### → Continuous Integration
 
-### Views
+* **Added:**
+  * GitHub action workflows for:
+    * Continuous integration which includes coding standards checks, unit testing and static analysis
+    * Automatic pull-request labeling
+  * Git pre-commit hooks using [pre-commit](https://pre-commit.com) package
 
-- Read more about views in the Spiral Framework: <https://spiral.dev/docs/views-configuration>
-- Documentation: <https://spiral.dev/docs/views-plain>
+### → Deployments
 
-### DataGridBridge
+* **Added:**
+  * [Deployer](https://deployer.org) for automatic deployments to staging and production servers with support of [GitHub Environments](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
+  * For more information see [Deployments](#-requirements) section
 
-- Documentation: `https://spiral.dev/docs/component-data-grid`
+<br>
 
-### LeagueEvent
+## 🚩 Requirements
 
-- Documentation: <https://spiral.dev/docs/advanced-events>
+To use this repository, you need to meet the following requirements:
 
-### Scheduler
+* **Operating System**: macOS Monterey+, Linux, or Windows with WSL2.
+* **Docker**: Version 26.0.0 or newer. Installation guides:
+  * [How To Install and Use Docker on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
+  * [How To Install Docker Desktop on Mac](https://docs.docker.com/desktop/install/mac-install/)
+* **Cloned, configured and running** [docker-shared-services](https://github.com/wayofdev/docker-shared-services) to support system-wide DNS, routing, and TLS support via Traefik.
 
-- Documentation: <https://spiral.dev/docs/advanced-scheduler>
+<br>
 
-### TemporalBridge
+## 💿 Installation
 
-- Documentation: <https://spiral.dev/docs/temporal-configuration>
+> [!Note]
+> You should configure, set up, and run the [docker-shared-services](https://github.com/wayofdev/docker-shared-services) repository to ensure system-wide TLS and DNS support.
 
-### SentryBridge
+### → Docker Shared Services
 
-- Configure the `SENTRY_DSN` environment variable to enable Sentry error reporting.
-- Documentation: <https://spiral.dev/docs/basics-errors>
+Check full instructions in [docker-shared-services](https://github.com/wayofdev/docker-shared-services) repository.
 
-## Usage
+1. **Create shared project directory:**
 
-To create your first controller effortlessly, use the scaffolding command:
+   ```bash
+   mkdir -p ~/projects/infra && cd ~/projects/infra
+   ```
 
-```bash
-php app.php create:controller CurrentDate
-```
+2. **Clone `docker-shared-services` repository:**
 
-After executing this command, a new controller class will be created in the `src/Endpoint/Web` directory. The
-class will look like this:
+    ```bash
+    git clone \
+    git@github.com:wayofdev/docker-shared-services.git \
+    ~/projects/infra/docker-shared-services && \
+    cd ~/projects/infra/docker-shared-services
+   ```
 
-```php
-namespace App\Endpoint\Web;
+3. **Create `.env` file:**
 
-final class CurrentDateController
-{
-    public function show(): string
-    {
-        return \date('Y-m-d H:i:s');
-    }
-}
-```
+    ```bash
+    make env
+    ```
 
-The next step involves associating a route with your controller.
+4. **Install root certificate** and generate default project certs:
 
-Spiral simplifies route definition in your application by utilizing PHP attributes. You just need to add the #[Route]
-attribute to the controller's method, as shown below:
+    ```bash
+    make cert-install
+    ```
 
-```php
-use Spiral\Router\Annotation\Route;
+5. **Run shared services:**
 
-// ...
+    ```bash
+    make up
+    ```
 
-#[Route(route: '/date', name: 'current-date', methods: 'GET')]
-public function show(): string
-{
-    return \date('Y-m-d H:i:s');
-}
-```
+### → Laravel Starter Template
 
-To view the list of routes, use the following command:
+1. **Clone** repository:
 
-```bash
-php app.php route:list
-```
+   After forking or creating generating repository from template, you can clone it to your local machine. In this example we will use `spiral-starter-tpl` repository as starting point.
 
-You should observe your current-date route within the displayed list:
+   ```bash
+   git clone \
+     git@github.com:wayofdev/spiral-starter-tpl.git \
+     ~/projects/spiral-starter-tpl && \
+   cd ~/projects/spiral-starter-tpl
+   ```
 
-```bash
-+--------------+--------+----------+------------------------------------------------+--------+
-| Name:        | Verbs: | Pattern: | Target:                                        | Group: |
-+--------------+--------+----------+------------------------------------------------+--------+
-| current-date | GET    | /date    | App\Endpoint\Web\CurrentDateController->show   | web    |
-+--------------+--------+----------+------------------------------------------------+--------+
-```
+2. **Generate** `.env` file
 
-### What's Next?
+   Generate `.env` file from `.env.example` file using `Makefile` command:
 
-Now, dive deeper into the fundamentals by reading some articles:
-
-- [Routing](https://spiral.dev/docs/http-routing)
-- [Annotated Routing](https://spiral.dev/docs/http-routing#attribute-based-routing)
-- [Middleware](https://spiral.dev/docs/http-middleware)
-- [Error Pages](https://spiral.dev/docs/http-errors)
-- [Custom HTTP handler](https://spiral.dev/docs/cookbook-psr-15)
-- [Scaffolding](https://spiral.dev/docs/basics-scaffolding)
-
-### RoadRunner Queue server
-
-Before you can start the queue server, you need to configure it.
-
-#### Queue broker configuration
-
-Firs of all, you need to configure the queue broker. All information about the queue broker configuration can be found
-in the [RoadRunner documentation](https://roadrunner.dev/docs/queues-overview).
-
-#### Spiral configuration
-
-You can read more about the configuration options in
-the [Spiral documentation](https://spiral.dev/docs/queue-roadrunner/current/en).
-
-#### Starting the queue server
-
-To start the queue server using RoadRunner, run the following command in your project directory:
-
-```bash
-./rr serve
-```
-
-### RoadRunner HTTP server
-
-To start HTTP server using RoadRunner, run the following command in your project directory:
-
-```bash
-./rr serve
-```
-
-Once the server is running, you can access your application in a web browser by going to the following
-URL: <http://127.0.0.1:8080>.
-
-> **Note**:
-> For more information on how to use RoadRunner with Spiral, please consult
-> the [official documentation](https://spiral.dev/docs/start-server).
-
-## Console commands
-
-### Download or update RoadRunner
-
-Allows to install the latest version of the RoadRunner compatible with your environment (operating system, processor
-architecture, runtime, etc...).
-
-```bash
-composer rr:download
-# or
-./vendor/bin/rr get-binary
-```
-
-## Useful resources
-
-- [**Spiral Framework documentation**](https://spiral.dev/docs)
-- [**Roadmap of Learning Spiral Framework**](https://spiral.dev/roadmap) - For all the newcomers who are eager to dive into the Spiral Environment, this roadmap will be your guiding star. We understand the challenges beginners face, and with this structured path, our aim is to simplify your learning journey.
-- [**RoadRunner documentation**](https://roadrunner.dev/docs)
-- [Community packages](https://github.com/spiral-packages)
-- [Buggregator](https://github.com/buggregator/server) — OpenSource tool that offers a range of debugging features for Long running PHP applications.
-- [Birddog](https://github.com/roadrunner-server/birddog) — OpenSource tool for monitoring RoadRunner instances.
-- [Support us](https://github.com/sponsors/roadrunner-server)
-- [Contributing](https://spiral.dev/docs/about-contributing/)
-
-## Project Structure
-
-If you chose to install the default application skeleton, your project will have the following directory structure:
-
-```text
-- Endpoint
-    - Web
-        - UserController.php
-        - Filter
-            - CreateUserFilter.php
-        - Middleware
-            - LocaleMiddleware.php
-        - Interceptor
-            - ValidateFiltersInterceptor.php
-        - routes.php
-    - Console
-        - Interceptor
-            - PromptRequiredArguments.php
-        - CreateUserCommand.php
-    - RPC
-        - ...
-    - Temporal
-        - Workflow
-            - ...
-        - Activity
-            - ...
-- Application
-    - Bootloader
-        - RoutesBootloader.php
-        - UserModuleBootloader.php
-    - Exception
-        - SomeException.php
-        - Renderer
-            - ViewRenderer.php
-    - AppDirectories.php
-    - Kernel.php
-- Domain
-    - User
-        - Entity
-            - User.php
-        - Service
-            - StoreUserService.php
-        - Repository
-            - UserRepositoryInterface.php
-        - Exception
-            - UserNotFoundException.php
-- Infrastructure
-    - Persistence
-        - CycleUserRepository.php
-    - CycleORM
-        - Typecaster
-            - UuidTypecast.php
-    - Interceptor
-        - LogInterceptor.php
-        - ExceptionHandlerInterceptor.php
-```
-
-### Here's a brief explanation of the directories and files in this structure
-
-- **Endpoint**: This directory contains the entry points for your application, including HTTP endpoints (in the Web
-  subdirectory), command-line interfaces (in the Console subdirectory), and gRPC services (in the RPC subdirectory).
-
-- **Application**: This directory contains the core of your application, including the Kernel class that boots your
-  application, the Bootloader classes that register services with the container, and the Exception directory that
-  contains exception handling logic.
-
-- **Domain**: This directory contains your domain logic, organized by subdomains. For example, an Entity for the User
-  model, a Service for storing new users, a Repository for fetching users from the database, and an Exception for
-  handling user-related errors.
-
-- **Infrastructure**: This directory contains the infrastructure code for your application, including the Persistence
-  directory for database-related code, the CycleORM directory for ORM-related code, and the Interceptor directory for
-  global interceptors.
-
-The project structure we provided is a common structure used in many PHP applications, and it can serve as a starting
-point for your projects By following this structure, you can organize your code in a logical and maintainable
-way, making it easier to build and scale your applications over time. Of course, you may need to make adjustments to fit
-the specific needs of your project, but this structure provides a solid foundation for most applications.
-
-**Good luck with your project!**
-
-## Support
-
-If you have any questions or need help with the project, please don't hesitate to reach out! You can find us on Discord
-at the following link:
-
-[Discord Server](https://discord.gg/TFeEmCs)
-
-Alternatively, you can create an issue on GitHub to report a bug or request a feature:
-
-[Create an Issue on GitHub](https://github.com/spiral/framework/issues/new/choose)
-
-We welcome any feedback or suggestions you may have, and are always happy to help troubleshoot any issues you may
-encounter.
+   ```bash
+   $ make env \
+       APP_NAME=laravel \
+       SHARED_SERVICES_NAMESPACE=ss \
+       COMPOSE_PROJECT_NAME=spiral-starter-tpl
+   ```
+
+   **Change** generated `.env` file to match your needs, if needed.
+
+   (Optional): to re-generate `.env` file, add `FORCE=true` to the end of command:
+
+   ```bash
+   $ make env \
+       APP_NAME=laravel \
+       SHARED_SERVICES_NAMESPACE=ss \
+       COMPOSE_PROJECT_NAME=spiral-starter-tpl \
+       FORCE=true
+   ```
+
+3. **Build**, install and run. This will also generate Laravel app key:
+
+   ```bash
+   $ make
+
+   # or run commands separately
+   $ make hooks
+   $ make install
+   $ make key
+   $ make prepare
+   $ make up
+   ```
+
+4. **Open** your browser and navigate to `https://api.spiral-starter-tpl.docker` to see Laravel welcome page.
+
+<br>
+
+## 🧰 Project Architecture
+
+The project architecture of `wayofdev/spiral-starter-tpl` follows a structured approach with distinct layers:
+
+* **Domain:** Contains core business logic and entities.
+* **Bridge:** Connects the domain layer with external systems or services.
+* **Infrastructure:** Handles interactions with external systems, such as databases, APIs, or file systems.
+* **Support:** Provides general-purpose helper classes that assist various parts of the application.
+* **DatabaseSeeders:** Handles database seeding logic.
+* **DatabaseFactories:** Manages database factory definitions.
+* **Tests:** Contains test cases for various layers of the application.
+
+Each layer has defined dependencies, ensuring a clear separation of concerns and facilitating maintainability and scalability.
+
+For more information check [deptrac.yaml](https://github.com/wayofdev/spiral-starter-tpl/blob/develop/app/deptrac.yaml) located in repository `app` folder.
