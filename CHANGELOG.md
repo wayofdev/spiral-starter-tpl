@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.0.0](https://github.com/wayofdev/spiral-starter-tpl/compare/v2.0.2...v3.0.0) (2024-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* refactoring structure to meet DDD
+
+### Features
+
+* align with deptrac ([c6cea0c](https://github.com/wayofdev/spiral-starter-tpl/commit/c6cea0ce597d14cdb8418d0e18ee2f7800b2eb39))
+* refactoring structure to meet DDD ([64569f0](https://github.com/wayofdev/spiral-starter-tpl/commit/64569f08009dfe97987f7c7d3ec38f38bb2182aa))
+
+
+### Continuous Integration
+
+* add ext-decimal ([1986c17](https://github.com/wayofdev/spiral-starter-tpl/commit/1986c172a2fd8fa23777d53d1f7a28a9134b564f))
+* add ext-decimal ([145dc72](https://github.com/wayofdev/spiral-starter-tpl/commit/145dc726bd1cfb811befd914fcc3b501a3129628))
+* fix lint composer deps ([d268110](https://github.com/wayofdev/spiral-starter-tpl/commit/d26811092eb8b8ddc54275ed1129000200fd74c3))
+* fix rector ([0a0f782](https://github.com/wayofdev/spiral-starter-tpl/commit/0a0f782a73fc9b63d87333fdf355e1ad046007e5))
+* lint composer ([caa8b51](https://github.com/wayofdev/spiral-starter-tpl/commit/caa8b5118c700c9c94a0b8c1ec25f10116ee6f02))
+* update composer deps ([8040a42](https://github.com/wayofdev/spiral-starter-tpl/commit/8040a42b5205238639bc4eb52308baa551fc69f0))
+
 ## [2.0.2](https://github.com/wayofdev/spiral-starter-tpl/compare/v2.0.1...v2.0.2) (2024-08-01)
 
 
