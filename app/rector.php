@@ -11,7 +11,7 @@ return Config\RectorConfig::configure()
     ->withCache(__DIR__ . '/.build/rector/')
     ->withPaths([
         __DIR__ . '/config/',
-        __DIR__ . '/migrations/',
+        __DIR__ . '/database/',
         __DIR__ . '/src/',
         __DIR__ . '/tests/',
         __DIR__ . '/.php-cs-fixer.dist.php',
