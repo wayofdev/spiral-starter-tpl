@@ -11,6 +11,16 @@ trait AggregatableRootId
 {
     protected string $id;
 
+    /**
+     * @throws AssertionFailedException
+     */
+    private function __construct(string $id)
+    {
+        $this->assertValidId($id);
+
+        $this->id = $id;
+    }
+
     public function equals(self $entityId): bool
     {
         return $this->id === $entityId->id;
@@ -32,15 +42,5 @@ trait AggregatableRootId
     protected function assertValidId(string $id): void
     {
         Assertion::uuid($id);
-    }
-
-    /**
-     * @throws AssertionFailedException
-     */
-    private function __construct(string $id)
-    {
-        $this->assertValidId($id);
-
-        $this->id = $id;
     }
 }

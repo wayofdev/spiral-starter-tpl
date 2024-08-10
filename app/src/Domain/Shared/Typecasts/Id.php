@@ -6,9 +6,9 @@ namespace Domain\Shared\Typecasts;
 
 use Assert\AssertionFailedException;
 use Cycle\Database\DatabaseInterface;
+use Domain\Shared\Events\Concerns\AggregatableRootId;
 use EventSauce\EventSourcing\AggregateRootId;
 use Ramsey\Uuid\Uuid;
-use Domain\Shared\Events\Concerns\AggregatableRootId;
 
 /**
  * @phpstan-consistent-constructor
