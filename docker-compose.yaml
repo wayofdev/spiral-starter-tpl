@@ -41,7 +41,7 @@ services:
       - traefik.http.services.api-${COMPOSE_PROJECT_NAME}.loadbalancer.server.scheme=http
 
   database:
-    image: postgres:16.3-alpine
+    image: postgres:16.4-alpine
     container_name: ${COMPOSE_PROJECT_NAME}-database
     restart: on-failure
     networks:
