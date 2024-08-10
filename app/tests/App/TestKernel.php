@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\App;
 
-use App\Application\Kernel;
+use Bridge\Spiral\Kernel;
 use Spiral\Testing\TestableKernelInterface;
 use Spiral\Testing\Traits\TestableKernel;
 

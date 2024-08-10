@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Job;
 
-use App\Endpoint\Job\Ping;
+use Bridge\Spiral\Public\Ping\Jobs\Ping;
 use PHPUnit\Framework\Attributes\Test;
 use Spiral\Queue\Exception\InvalidArgumentException;
 use Spiral\Testing\Queue\FakeQueue;
