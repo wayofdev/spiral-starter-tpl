@@ -5,7 +5,8 @@ parameters:
     level: 8
     paths:
         - config/
-        - migrations/
+        - database/Factories
+        - database/Seeders
         - src/
         - tests/
     excludePaths:

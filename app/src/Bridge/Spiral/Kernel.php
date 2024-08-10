@@ -9,6 +9,7 @@ use Spiral\Bootloader as Framework;
 use Spiral\Bootloader\Http\HttpBootloader;
 use Spiral\Cache\Bootloader\CacheBootloader;
 use Spiral\Cycle\Bootloader as CycleBridge;
+use Spiral\DatabaseSeeder\Bootloader\DatabaseSeederBootloader;
 use Spiral\DataGrid\Bootloader\GridBootloader;
 use Spiral\Debug\Bootloader\DumperBootloader;
 use Spiral\Distribution\Bootloader\DistributionBootloader;
@@ -83,6 +84,7 @@ class Kernel extends \Spiral\Framework\Kernel
             // Databases
             CycleBridge\DatabaseBootloader::class,
             CycleBridge\MigrationsBootloader::class,
+            DatabaseSeederBootloader::class,
 
             // ORM
             CycleBridge\SchemaBootloader::class,

@@ -11,6 +11,16 @@ parameters:
 			path: config/database.php
 
 		-
+			message: "#^Class Database\\\\Factories\\\\Category\\\\CategoryFactory extends generic class Spiral\\\\DatabaseSeeder\\\\Factory\\\\AbstractFactory but does not specify its types\\: TEntity$#"
+			count: 1
+			path: database/Factories/Category/CategoryFactory.php
+
+		-
+			message: "#^Method Database\\\\Factories\\\\Category\\\\CategoryFactory\\:\\:makeEntity\\(\\) has parameter \\$definition with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: database/Factories/Category/CategoryFactory.php
+
+		-
 			message: "#^Method Spiral\\\\Logger\\\\LogsInterface\\:\\:getLogger\\(\\) invoked with 0 parameters, 1 required\\.$#"
 			count: 1
 			path: src/Application/Payment/Activities/PaymentActivity.php
@@ -81,9 +91,9 @@ parameters:
 			path: src/Bridge/Spiral/Public/Ping/Jobs/Ping.php
 
 		-
-			message: "#^Access to an undefined property Bridge\\\\Spiral\\\\Public\\\\Web\\\\HomeController\\:\\:\\$views\\.$#"
+			message: "#^Access to an undefined property Bridge\\\\Spiral\\\\Public\\\\Web\\\\Controllers\\\\HomeController\\:\\:\\$views\\.$#"
 			count: 1
-			path: src/Bridge/Spiral/Public/Web/HomeController.php
+			path: src/Bridge/Spiral/Public/Web/Controllers/HomeController.php
 
 		-
 			message: "#^Method Domain\\\\Payment\\\\PaymentWorkflowInterface\\:\\:start\\(\\) has no return type specified\\.$#"
@@ -129,16 +139,6 @@ parameters:
 			message: "#^Property Infrastructure\\\\CycleORM\\\\Typecaster\\\\UuidTypecast\\:\\:\\$rules type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Infrastructure/CycleORM/Typecaster/UuidTypecast.php
-
-		-
-			message: "#^Class App\\\\Bridge\\\\Spiral\\\\Public\\\\Ping\\\\Jobs\\\\Ping not found\\.$#"
-			count: 3
-			path: tests/Feature/Job/PingTest.php
-
-		-
-			message: "#^Call to an undefined static method Tests\\\\App\\\\TestKernel\\:\\:create\\(\\)\\.$#"
-			count: 1
-			path: tests/TestCase.php
 
 		-
 			message: "#^Call to static method PHPUnit\\\\Framework\\\\Assert\\:\\:assertFalse\\(\\) with false will always evaluate to true\\.$#"

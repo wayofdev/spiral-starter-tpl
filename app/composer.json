@@ -35,12 +35,15 @@
     },
     "require": {
         "php": "^8.3",
+        "ext-decimal": "*",
         "ext-mbstring": "*",
         "ext-pdo": "*",
         "ext-sockets": "*",
+        "beberlei/assert": "^3.3",
         "cycle/annotated": "^4.1",
         "cycle/database": "^2.11",
         "cycle/orm": "^2.8",
+        "eventsauce/eventsauce": "^3.6",
         "illuminate/collections": "^9.52",
         "monolog/monolog": "^3.7",
         "ramsey/uuid": "^4.7",
@@ -75,6 +78,7 @@
         "psalm/plugin-phpunit": "^0.19",
         "rector/rector": "^1.2",
         "roave/infection-static-analysis-plugin": "^1.35",
+        "spiral-packages/database-seeder": "^3.2",
         "spiral/dumper": "^3.3",
         "spiral/testing": "^2.8",
         "vimeo/psalm": "^5.23.1",
@@ -87,7 +91,9 @@
             "Bridge\\Spiral\\": "src/Bridge/Spiral",
             "Application\\": "src/Application/",
             "Domain\\": "src/Domain/",
-            "Infrastructure\\": "src/Infrastructure/"
+            "Infrastructure\\": "src/Infrastructure/",
+            "Database\\Factories\\": "database/Factories/",
+            "Database\\Seeders\\": "database/Seeders/"
         }
     },
     "autoload-dev": {
@@ -147,7 +153,7 @@
         "refactor:ci": "rector process --config=rector.php --dry-run --ansi",
         "rr:download": "rr get-binary",
         "rr:download-protoc": "rr download-protoc-binary",
-        "stan": "phpstan analyse --memory-limit=2G",
+        "stan": "phpstan analyse --memory-limit=2G -vv",
         "stan:baseline": "phpstan analyse --generate-baseline --memory-limit=2G --allow-empty-baseline",
         "stan:ci": "phpstan analyse --memory-limit=2G --error-format=github",
         "test": [

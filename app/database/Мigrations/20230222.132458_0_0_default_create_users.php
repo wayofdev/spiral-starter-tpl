@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace database\migrations;
+namespace Migration;
 
 use Cycle\Migrations\Migration;
 
 class OrmDefault6b37c029f83df5d5b93667bad89b5fc9 extends Migration
 {
-    protected const DATABASE = 'default';
+    protected const string DATABASE = 'default';
 
     public function up(): void
     {

@@ -3,48 +3,48 @@
 deptrac:
   paths:
     - ./src/
-    - ./database/factories
-    - ./database/seeders
+    - ./database/Factories
+    - ./database/Seeders
     - ./tests/
 
   exclude_files:
     - '#.*test.*#'
 
   layers:
-    - name: Domain
-      collectors:
-        - type: directory
-          regex: src/Domain/.*
-
     - name: Application
       collectors:
         - type: directory
-          regex: src/Application/.*
+          value: 'src/Application/.*'
 
     - name: Bridge
       collectors:
         - type: directory
-          regex: src/Bridge/.*
+          value: 'src/Bridge/.*'
+
+    - name: Domain
+      collectors:
+        - type: directory
+          value: 'src/Domain/.*'
 
     - name: Infrastructure
       collectors:
         - type: directory
-          regex: src/Infrastructure/.*
+          value: 'src/Infrastructure/.*'
 
     - name: DatabaseSeeders
       collectors:
         - type: directory
-          regex: database/seeders/.*
+          value: 'database/Seeders/.*'
 
     - name: DatabaseFactories
       collectors:
         - type: directory
-          regex: database/factories/.*
+          value: 'database/Factories/.*'
 
     - name: Tests
       collectors:
         - type: directory
-          regex: tests/.*
+          value: 'tests/.*'
 
   ruleset:
     Domain: ~

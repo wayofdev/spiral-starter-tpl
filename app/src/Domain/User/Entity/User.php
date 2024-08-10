@@ -6,10 +6,10 @@ namespace Domain\User\Entity;
 
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
-use Infrastructure\Persistence\CycleORMUserRepository;
+use Domain\User\Repository\UserRepositoryInterface;
 
 #[Entity(
-    repository: CycleORMUserRepository::class,
+    repository: UserRepositoryInterface::class,
 )]
 class User
 {
