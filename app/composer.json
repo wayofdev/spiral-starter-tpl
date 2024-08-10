@@ -88,12 +88,12 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Bridge\\Spiral\\": "src/Bridge/Spiral",
             "Application\\": "src/Application/",
-            "Domain\\": "src/Domain/",
-            "Infrastructure\\": "src/Infrastructure/",
+            "Bridge\\Spiral\\": "src/Bridge/Spiral",
             "Database\\Factories\\": "database/Factories/",
-            "Database\\Seeders\\": "database/Seeders/"
+            "Database\\Seeders\\": "database/Seeders/",
+            "Domain\\": "src/Domain/",
+            "Infrastructure\\": "src/Infrastructure/"
         }
     },
     "autoload-dev": {
