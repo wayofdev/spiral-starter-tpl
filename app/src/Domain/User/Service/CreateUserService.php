@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\User\Service;
+namespace Domain\User\Service;
 
-use App\Domain\User\Entity\User;
 use Cycle\ORM\EntityManagerInterface;
+use Domain\User\Entity\User;
 
 /**
  * Simple service that creates new user.

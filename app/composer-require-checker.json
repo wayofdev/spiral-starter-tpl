@@ -1,6 +1,10 @@
 {
     "symbol-whitelist": [
         "Spiral\\Debug\\Bootloader\\DumperBootloader",
-        "Spiral\\Debug\\Middleware\\DumperMiddleware"
+        "Spiral\\Debug\\Middleware\\DumperMiddleware",
+        "Spiral\\DatabaseSeeder\\Attribute\\Seeder",
+        "Spiral\\DatabaseSeeder\\Bootloader\\DatabaseSeederBootloader",
+        "Spiral\\DatabaseSeeder\\Factory\\AbstractFactory",
+        "Spiral\\DatabaseSeeder\\Seeder\\AbstractSeeder"
     ]
 }

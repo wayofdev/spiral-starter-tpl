@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\User\Entity;
+namespace Domain\User\Entity;
 
-use App\Infrastructure\Persistence\CycleORMUserRepository;
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
+use Domain\User\Repository\UserRepositoryInterface;
 
 #[Entity(
-    repository: CycleORMUserRepository::class,
+    repository: UserRepositoryInterface::class,
 )]
 class User
 {
