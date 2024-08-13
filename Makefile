@@ -373,7 +373,8 @@ db-refresh: ## Delete migration files, wipe database, create new migrations, run
 .PHONY: db-refresh
 
 db-migrate: ## Run all pending migrations
-	$(APP_EXEC) php artisan migrate
+	@#$(APP_EXEC) php artisan migrate
+	$(APP_EXEC) php app.php cycle:migrate --split --run
 .PHONY: db-migrate
 
 #
