@@ -4345,16 +4345,16 @@
         },
         {
             "name": "psr/log",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001"
+                "reference": "79dff0b268932c640297f5208d6298f71855c03e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe5ea303b0887d5caefd3d431c3e61ad47037001",
-                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/79dff0b268932c640297f5208d6298f71855c03e",
+                "reference": "79dff0b268932c640297f5208d6298f71855c03e",
                 "shasum": ""
             },
             "require": {
@@ -4389,9 +4389,9 @@
                 "psr-3"
             ],
             "support": {
-                "source": "https://github.com/php-fig/log/tree/3.0.0"
+                "source": "https://github.com/php-fig/log/tree/3.0.1"
             },
-            "time": "2021-07-14T16:46:02+00:00"
+            "time": "2024-08-21T13:31:24+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -6939,16 +6939,16 @@
         },
         {
             "name": "spiral/sentry-bridge",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/sentry-bridge.git",
-                "reference": "7a42ffcee0939a10200445846f83be06ec636f95"
+                "reference": "57c447dffe1266c6ae1b91200ef91f10c0d4d27e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/sentry-bridge/zipball/7a42ffcee0939a10200445846f83be06ec636f95",
-                "reference": "7a42ffcee0939a10200445846f83be06ec636f95",
+                "url": "https://api.github.com/repos/spiral/sentry-bridge/zipball/57c447dffe1266c6ae1b91200ef91f10c0d4d27e",
+                "reference": "57c447dffe1266c6ae1b91200ef91f10c0d4d27e",
                 "shasum": ""
             },
             "require": {
@@ -6957,13 +6957,15 @@
                 "psr/http-factory": "^1.0.1",
                 "psr/http-message": "^1.0.1 || ^2.0",
                 "sentry/sentry": "^4.0",
-                "spiral/boot": "^3.0",
-                "spiral/snapshots": "^3.0"
+                "spiral/boot": "^3.13",
+                "spiral/core": "^3.13",
+                "spiral/snapshots": "^3.13"
             },
             "require-dev": {
+                "buggregator/trap": "^1.10",
                 "psr/log": "^3.0",
                 "spiral/testing": "^2.6",
-                "vimeo/psalm": "^5.17"
+                "vimeo/psalm": "^5.25"
             },
             "type": "library",
             "autoload": {
@@ -6977,16 +6979,36 @@
             ],
             "authors": [
                 {
-                    "name": "Anton Titov / Wolfy-J",
-                    "email": "wolfy.jd@gmail.com"
+                    "name": "Anton Titov (wolfy-j)",
+                    "email": "wolfy-j@spiralscout.com"
+                },
+                {
+                    "name": "Pavel Butchnev (butschster)",
+                    "email": "pavel.buchnev@spiralscout.com"
+                },
+                {
+                    "name": "Aleksei Gagarin (roxblnfk)",
+                    "email": "alexey.gagarin@spiralscout.com"
+                },
+                {
+                    "name": "Maksim Smakouz (msmakouz)",
+                    "email": "maksim.smakouz@spiralscout.com"
                 }
             ],
             "description": "Sentry Exception Handler for Spiral",
             "support": {
-                "issues": "https://github.com/spiral/sentry-bridge/issues",
-                "source": "https://github.com/spiral/sentry-bridge/tree/v2.2.0"
+                "chat": "https://discord.gg/V6EK4he",
+                "docs": "https://spiral.dev/docs",
+                "issues": "https://github.com/spiral/grpc-client/issues",
+                "source": "https://github.com/spiral/grpc-client"
             },
-            "time": "2023-12-27T06:14:17+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/spiral",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-08-21T09:46:28+00:00"
         },
         {
             "name": "spiral/temporal-bridge",
