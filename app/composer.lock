@@ -844,16 +844,16 @@
         },
         {
             "name": "cycle/orm",
-            "version": "v2.8.0",
+            "version": "v2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cycle/orm.git",
-                "reference": "0677d297878ac8a9fe1254340ef4be7b6172b77c"
+                "reference": "23023be5e8452c1e5b05417f9c4539db71d60927"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cycle/orm/zipball/0677d297878ac8a9fe1254340ef4be7b6172b77c",
-                "reference": "0677d297878ac8a9fe1254340ef4be7b6172b77c",
+                "url": "https://api.github.com/repos/cycle/orm/zipball/23023be5e8452c1e5b05417f9c4539db71d60927",
+                "reference": "23023be5e8452c1e5b05417f9c4539db71d60927",
                 "shasum": ""
             },
             "require": {
@@ -871,6 +871,7 @@
                 "phpunit/phpunit": "^9.5",
                 "ramsey/uuid": "^4.0",
                 "spiral/tokenizer": "^2.8 || ^3.0",
+                "symfony/var-dumper": "^5.2 || ^6.0 || ^7.0",
                 "vimeo/psalm": "5.21"
             },
             "type": "library",
@@ -915,7 +916,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-05-09T14:50:55+00:00"
+            "time": "2024-06-05T13:14:36+00:00"
         },
         {
             "name": "cycle/schema-builder",
