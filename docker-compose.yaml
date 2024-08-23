@@ -39,6 +39,8 @@ services:
       - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}.tls=true
       - traefik.http.services.api-${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=8668
       - traefik.http.services.api-${COMPOSE_PROJECT_NAME}.loadbalancer.server.scheme=http
+    logging:
+      driver: ${DOCKER_APP_LOG_DRIVER:-json-file}
 
   database:
     image: postgres:16.4-alpine
@@ -60,10 +62,66 @@ services:
       timeout: 1s
       start_period: 0s
       retries: 9
+    logging:
+      driver: ${DOCKER_DATABASE_LOG_DRIVER:-json-file}
+
+  mail:
+    image: axllent/mailpit:v1.20
+    container_name: ${COMPOSE_PROJECT_NAME}-mail
+    restart: on-failure
+    networks:
+      - default
+      - shared
+    volumes:
+      - mail-data:/data
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.mail-${COMPOSE_PROJECT_NAME}-secure.rule=Host(`mail.${COMPOSE_PROJECT_NAME}.docker`)
+      - traefik.http.routers.mail-${COMPOSE_PROJECT_NAME}-secure.entrypoints=websecure
+      - traefik.http.routers.mail-${COMPOSE_PROJECT_NAME}-secure.tls=true
+      - traefik.http.services.mail-${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=8025
+      - traefik.http.services.mail-${COMPOSE_PROJECT_NAME}.loadbalancer.server.scheme=http
+    healthcheck:
+      test: ['CMD', '/mailpit', 'readyz']
+      interval: 10s
+      timeout: 5s
+      start_period: 2s
+      retries: 6
+    logging:
+      driver: ${DOCKER_MAIL_LOG_DRIVER:-json-file}
+
+  storage:
+    image: docker.io/bitnami/minio:2024.8.17
+    container_name: ${COMPOSE_PROJECT_NAME}-storage
+    restart: on-failure
+    networks:
+      - default
+      - shared
+    volumes:
+      - storage-data:/bitnami/minio/data
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.storage-${COMPOSE_PROJECT_NAME}.rule=Host(`storage.${COMPOSE_PROJECT_NAME}.docker`)
+      - traefik.http.routers.storage-${COMPOSE_PROJECT_NAME}.entrypoints=websecure
+      - traefik.http.routers.storage-${COMPOSE_PROJECT_NAME}.tls=true
+      - traefik.http.services.storage-${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=9001
+      - traefik.http.services.storage-${COMPOSE_PROJECT_NAME}.loadbalancer.server.scheme=http
+    healthcheck:
+      test: ['CMD', 'mc', 'ready', 'local']
+      interval: 5s
+      timeout: 20s
+      start_period: 2s
+      retries: 5
+    logging:
+      driver: ${DOCKER_STORAGE_LOG_DRIVER:-json-file}
 
 volumes:
   database-data:
     name: ${COMPOSE_PROJECT_NAME}-database-data
+  mail-data:
+    name: ${COMPOSE_PROJECT_NAME}-mail-data
+  storage-data:
+    name: ${COMPOSE_PROJECT_NAME}-storage-data
 
 networks:
   shared:
