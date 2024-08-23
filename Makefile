@@ -149,15 +149,17 @@ prepare:
 # Docker Actions
 # ------------------------------------------------------------------------------------
 up: # Creates and starts containers, defined in docker-compose and override file
-	$(DOCKER_COMPOSE) up --remove-orphans -d
+	$(DOCKER_COMPOSE) up --remove-orphans -d --wait
 	@sleep 1
 	$(DOCKER_COMPOSE) exec app wait4x postgresql 'postgres://${DB_USERNAME}:${DB_PASSWORD}@database:5432/${DB_DATABASE}?sslmode=disable' -t 1m
 	$(DOCKER_COMPOSE) exec app wait4x tcp '${TEMPORAL_ADDRESS}' -t 1m
 	@echo ""
 	@echo "${GREEN}Project is up and running!${RST}"
 	@echo ""
-	@echo "${BLUE}API:${RST} https://api.${COMPOSE_PROJECT_NAME}.docker"
-	@echo "${BLUE}Temporal UI:${RST} https://temporal.${COMPOSE_PROJECT_NAME}.docker"
+	@echo "${BLUE}API:${RST}                      https://api.${COMPOSE_PROJECT_NAME}.docker"
+	@echo "${BLUE}Temporal UI:${RST}	          https://temporal.${COMPOSE_PROJECT_NAME}.docker"
+	@echo "${BLUE}Mailpit UI (Fake SMTP):${RST}   https://mail.${COMPOSE_PROJECT_NAME}.docker"
+	@echo "${BLUE}MinIO UI (Local S3):${RST}      https://storage.${COMPOSE_PROJECT_NAME}.docker"
 	@echo ""
 .PHONY: up
 
