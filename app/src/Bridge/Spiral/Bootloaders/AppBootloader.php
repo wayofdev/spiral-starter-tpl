@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Bridge\Spiral\Bootloaders;
 
+use Bridge\Spiral\Interceptors\UuidParametersConverterInterceptor;
 use Spiral\Bootloader\DomainBootloader;
 use Spiral\Core\CoreInterface;
 use Spiral\Cycle\Interceptor\CycleInterceptor;
@@ -21,6 +22,9 @@ final class AppBootloader extends DomainBootloader
             CycleInterceptor::class,
             GridInterceptor::class,
             GuardInterceptor::class,
+
+            // Allows to convert uuid string to UuidInterface instance
+            UuidParametersConverterInterceptor::class,
         ];
     }
 
