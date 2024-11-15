@@ -46,7 +46,7 @@
         "cycle/entity-behavior-uuid": "^1.2",
         "cycle/orm": "^2.9",
         "eventsauce/eventsauce": "^3.6",
-        "illuminate/collections": "^9.52",
+        "illuminate/collections": "^11.0",
         "monolog/monolog": "^3.8",
         "ramsey/uuid": "^4.7",
         "spiral-packages/laravel-validator": "^1.1",
