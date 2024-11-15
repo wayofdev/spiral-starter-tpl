@@ -105,6 +105,13 @@ This starter template includes several added, changed, and removed features:
   * [Deployer](https://deployer.org) for automatic deployments to staging and production servers with support of [GitHub Environments](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
   * For more information see [Deployments](#-requirements) section
 
+### → Services
+
+* **Added:**
+  * [Mailpit](https://github.com/axllent/mailpit) service to simplify email testing in development. Mailpit is an email testing tool that provides a web interface for viewing and managing test emails sent by the application.
+  * [MinIO](https://min.io) service for object storage, compatible with the Amazon S3 API. This enables the application to store and retrieve files in a development environment.
+  * [Temporal](https://temporal.io/) service is included by default for managing distributed workflows. The configuration for Temporal is located in the separate [docker-compose.temporal.yaml](./docker-compose.temporal.yaml) file, allowing easier integration with the main application.
+
 <br>
 
 ## 🚩 Requirements
@@ -161,7 +168,7 @@ Check full instructions in [docker-shared-services](https://github.com/wayofdev/
     make up
     ```
 
-### → Laravel Starter Template
+### → Spiral Starter Template
 
 1. **Clone** repository:
 
@@ -180,7 +187,6 @@ Check full instructions in [docker-shared-services](https://github.com/wayofdev/
 
    ```bash
    $ make env \
-       APP_NAME=laravel \
        SHARED_SERVICES_NAMESPACE=ss \
        COMPOSE_PROJECT_NAME=spiral-starter-tpl
    ```
@@ -191,7 +197,6 @@ Check full instructions in [docker-shared-services](https://github.com/wayofdev/
 
    ```bash
    $ make env \
-       APP_NAME=laravel \
        SHARED_SERVICES_NAMESPACE=ss \
        COMPOSE_PROJECT_NAME=spiral-starter-tpl \
        FORCE=true
@@ -229,3 +234,72 @@ The project architecture of `wayofdev/spiral-starter-tpl` follows a structured a
 Each layer has defined dependencies, ensuring a clear separation of concerns and facilitating maintainability and scalability.
 
 For more information check [deptrac.yaml](https://github.com/wayofdev/spiral-starter-tpl/blob/develop/app/deptrac.yaml) located in repository `app` folder.
+
+<br>
+
+## 🪄 Template
+
+This project was generated from the [spiral/app](https://github.com/spiral/app) repository using the command: `composer create-project spiral/app spiral-starter-tpl` with the following selected options:
+
+<details>
+  <summary>View Setup Options</summary>
+
+  ```bash
+  Which application preset do you want to install?
+  > [1] Web
+
+  Create a default application structure and demo data?
+  > [1] Yes
+
+  Would you like to use SAPI?
+  > [1] Yes
+
+  Do you need Cycle ORM?
+  > [1] Yes
+
+  Which collections do you want to use with Cycle ORM?
+  > [2] Laravel Collections
+
+  Which validator component do you want to use?
+  > [3] Laravel Validator
+
+  Do you want to use Queue component?
+  > [1] Yes
+
+  Do you want to use Cache component?
+  > [1] Yes
+
+  Do you want to use Mailer component?
+  > [1] Yes
+
+  Do you want to use Storage component?
+  > [1] Yes
+
+  Which template engine do you want to use?
+  > [3] Plain PHP
+
+  Do you need Data Grid?
+  > [1] Yes
+
+  Do you want to use the Event Dispatcher?
+  > [1] Yes
+
+  Do you need a cron jobs scheduler?
+  > [1] Yes
+
+  Do you need Translator?
+  > [0] No
+
+  Do you need the Temporal?
+  > [1] Yes
+
+  Do you need the RoadRunner Metrics?
+  > [1] Yes
+
+  Do you need the Sentry?
+  > [1] Yes
+  ```
+
+</details>
+
+<br>
