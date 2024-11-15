@@ -3,3 +3,4 @@
 /runtime
 rr*
 protoc-gen-php-grpc*
+.env

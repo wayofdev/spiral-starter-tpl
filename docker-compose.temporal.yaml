@@ -2,7 +2,7 @@
 
 services:
   temporal-database:
-    image: postgres:16.3-alpine
+    image: postgres:16.4-alpine
     container_name: ${COMPOSE_PROJECT_NAME}-temporal-database
     restart: on-failure
     networks:
@@ -21,6 +21,8 @@ services:
       timeout: 1s
       start_period: 0s
       retries: 9
+    logging:
+      driver: ${DOCKER_TEMPORAL_DATABASE_LOG_DRIVER:-json-file}
 
   temporal:
     image: temporalio/auto-setup:1.24.2
@@ -48,6 +50,8 @@ services:
       timeout: 5s
       start_period: 2s
       retries: 9
+    logging:
+      driver: ${DOCKER_TEMPORAL_LOG_DRIVER:-json-file}
 
   temporal-ui:
     image: temporalio/ui:2.29.2
@@ -69,6 +73,8 @@ services:
       - traefik.http.routers.temporal-ui-${COMPOSE_PROJECT_NAME}.tls=true
       - traefik.http.services.temporal-ui-${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=8080
       - traefik.http.services.temporal-ui-${COMPOSE_PROJECT_NAME}.loadbalancer.server.scheme=http
+    logging:
+      driver: ${DOCKER_TEMPORAL_UI_LOG_DRIVER:-json-file}
 
 volumes:
   temporal-database-data:
