@@ -66,7 +66,7 @@ services:
       driver: ${DOCKER_DATABASE_LOG_DRIVER:-json-file}
 
   mail:
-    image: axllent/mailpit:v1.20
+    image: axllent/mailpit:v1.21
     container_name: ${COMPOSE_PROJECT_NAME}-mail
     restart: on-failure
     networks:
