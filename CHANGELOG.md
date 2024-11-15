@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.1.0](https://github.com/wayofdev/spiral-starter-tpl/compare/v3.0.0...v3.1.0) (2024-11-15)
+
+
+### Features
+
+* add minio storage, added log driver env variables ([1499dd3](https://github.com/wayofdev/spiral-starter-tpl/commit/1499dd399010cc9745895d3328705c6d4644b6e6))
+* prepare demo structure ([5851e7f](https://github.com/wayofdev/spiral-starter-tpl/commit/5851e7fc3e1fdfeb5fa9b95142f1cefd0fef1668))
+
+
+### Bug Fixes
+
+* enable EntityBehaviorBootloader ([e60cb36](https://github.com/wayofdev/spiral-starter-tpl/commit/e60cb36e6b488c2012b16362166a10137bd5d788))
+
+
+### Documentation
+
+* initial readme ([9883396](https://github.com/wayofdev/spiral-starter-tpl/commit/9883396907f9e2bbc3a7ceed323a7c6b0d33369e))
+* readme updates ([6a39745](https://github.com/wayofdev/spiral-starter-tpl/commit/6a3974520ade97d558b2c93ccdbb16b6c27dab99))
+
 ## [3.0.0](https://github.com/wayofdev/spiral-starter-tpl/compare/v2.0.2...v3.0.0) (2024-08-10)
 
 
