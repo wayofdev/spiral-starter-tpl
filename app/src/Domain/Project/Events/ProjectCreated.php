@@ -20,7 +20,7 @@ final readonly class ProjectCreated implements SerializablePayload, JsonSerializ
         private ProjectId $id,
         private string $name,
         private string $description,
-        private Signature $signature
+        private Signature $signature,
     ) {
     }
 

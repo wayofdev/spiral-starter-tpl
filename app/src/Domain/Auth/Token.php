@@ -15,7 +15,7 @@ final readonly class Token implements AccessToken
         private int $issuedAt,
         private int $expiration,
         private string $authorizedParty,
-        private string $scope
+        private string $scope,
     ) {
     }
 

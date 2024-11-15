@@ -11,7 +11,7 @@ final readonly class TokenFootprint
     public function __construct(
         private string $id,
         private string $party,
-        private string $realm
+        private string $realm,
     ) {
     }
 
