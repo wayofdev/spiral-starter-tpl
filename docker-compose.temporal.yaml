@@ -2,7 +2,7 @@
 
 services:
   temporal-database:
-    image: postgres:16.4-alpine
+    image: postgres:16.6-alpine
     container_name: ${COMPOSE_PROJECT_NAME}-temporal-database
     restart: on-failure
     networks:
