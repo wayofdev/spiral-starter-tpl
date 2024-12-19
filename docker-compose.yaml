@@ -91,7 +91,7 @@ services:
       driver: ${DOCKER_MAIL_LOG_DRIVER:-json-file}
 
   storage:
-    image: docker.io/bitnami/minio:2024.8.17
+    image: docker.io/bitnami/minio:2024.12.18
     container_name: ${COMPOSE_PROJECT_NAME}-storage
     restart: on-failure
     networks:
