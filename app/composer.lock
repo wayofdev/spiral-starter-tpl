@@ -713,16 +713,16 @@
         },
         {
             "name": "cycle/database",
-            "version": "2.11.2",
+            "version": "2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cycle/database.git",
-                "reference": "568801bba101d295e5e6a28aab2197ad41824d2b"
+                "reference": "36fd9b1ed8a3b71fa99be2f6fab6e1f73a938cbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cycle/database/zipball/568801bba101d295e5e6a28aab2197ad41824d2b",
-                "reference": "568801bba101d295e5e6a28aab2197ad41824d2b",
+                "url": "https://api.github.com/repos/cycle/database/zipball/36fd9b1ed8a3b71fa99be2f6fab6e1f73a938cbd",
+                "reference": "36fd9b1ed8a3b71fa99be2f6fab6e1f73a938cbd",
                 "shasum": ""
             },
             "require": {
@@ -738,12 +738,12 @@
             },
             "require-dev": {
                 "ergebnis/composer-normalize": "^2.42",
-                "infection/infection": "^0.26.10",
+                "infection/infection": ">=0.26.10",
                 "mockery/mockery": "^1.5",
                 "phpunit/phpunit": "^9.5",
-                "spiral/code-style": "~2.2.0",
+                "spiral/code-style": "^2.2.0",
                 "spiral/tokenizer": "^2.14 || ^3.0",
-                "vimeo/psalm": "^5.18"
+                "vimeo/psalm": "^5.26 || ^6.6"
             },
             "type": "library",
             "autoload": {
@@ -802,7 +802,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-23T15:28:24+00:00"
+            "time": "2025-02-17T09:43:25+00:00"
         },
         {
             "name": "cycle/entity-behavior",
@@ -8634,8 +8634,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -8714,8 +8714,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -16267,7 +16267,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -16277,7 +16277,7 @@
         "ext-pdo": "*",
         "ext-sockets": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.3.7"
     },
