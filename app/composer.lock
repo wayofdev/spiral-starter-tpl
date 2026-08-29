@@ -7038,16 +7038,16 @@
         },
         {
             "name": "spiral/sapi-bridge",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/sapi-bridge.git",
-                "reference": "af36208db3fe394e6424d08428b65867619c1d9a"
+                "reference": "2470998fed84f6624f8b636b4db9e955b1054d27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/sapi-bridge/zipball/af36208db3fe394e6424d08428b65867619c1d9a",
-                "reference": "af36208db3fe394e6424d08428b65867619c1d9a",
+                "url": "https://api.github.com/repos/spiral/sapi-bridge/zipball/2470998fed84f6624f8b636b4db9e955b1054d27",
+                "reference": "2470998fed84f6624f8b636b4db9e955b1054d27",
                 "shasum": ""
             },
             "require": {
@@ -7123,7 +7123,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-09-04T11:19:08+00:00"
+            "time": "2026-01-15T10:26:33+00:00"
         },
         {
             "name": "spiral/sentry-bridge",
@@ -16267,7 +16267,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -16277,9 +16277,9 @@
         "ext-pdo": "*",
         "ext-sockets": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.3.7"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
